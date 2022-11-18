@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 const classes = {
-  section: 'container mb-5',
+  section: 'container row justify-content-center text-center mt-3',
 };
 
 function Codewars() {
