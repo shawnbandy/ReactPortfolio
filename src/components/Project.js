@@ -1,5 +1,7 @@
 import React from 'react';
+import Codewars from './ProjectComponents/Codewars';
 import Picture from './ProjectComponents/Pictures';
+import Biography from './ProjectComponents/Biography';
 
 const classes = {
   mainbody: 'container border border-danger',
@@ -9,13 +11,12 @@ const classes = {
 function Project() {
   return (
     <section className={classes.mainbody}>
-      <h1>Welcome main Body</h1>
+      <h1>About Me</h1>
       <div className={classes.aboutMe}>
-        <p>About Me section</p>
         <Picture />
-        <p>Bio of me</p>
+        <Biography />
         <p>images of projects and links to them</p>
-        <p>image of codewars problems and explanation on how I did it</p>
+        <Codewars />
       </div>
     </section>
   );

@@ -1,42 +1,34 @@
 import React from 'react';
-
-//*60
-const white = {
-  color: '#F9F7F7',
-};
-//*30
-const gray = {
-  background: '#DBE2EF',
-};
-//*10
-const lB = {
-  background: '#3F72AF',
-};
-
-//*10
-const dB = {
-  color: '#112D4E',
-};
+import {
+  whiteB,
+  grayB,
+  lightBB,
+  darkBB,
+  whiteC,
+  grayC,
+  lightBC,
+  darkBC,
+} from './ProjectComponents/colors';
 
 const classes = {
-  nav: 'navbar justify-content-between',
+  nav: 'navbar justify-content-around',
   link: 'navbar-brand',
 };
 
 function NavBar() {
   return (
-    <nav className={classes.nav} style={lB}>
+    <nav className={classes.nav} style={lightBB}>
       <a className={classes.link} href="#">
-        <p style={dB}>GitHub</p>
+        <p style={whiteC}>GitHub</p>
       </a>
       <a className={classes.link} href="#">
-        LinkedIn
+        <p style={whiteC}>LinkedIn</p>
       </a>
       <a className={classes.link} href="#">
-        Codewars
+        <p style={whiteC}>Codewars</p>
       </a>
       <a className={classes.link} href="#">
-        Resume
+        <p style={whiteC}>Resume</p>
       </a>
     </nav>
   );
