@@ -2,8 +2,8 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="header">
-      <h1>Welcome</h1>
+    <header className="border border-primary">
+      <h1>Welcome header</h1>
     </header>
   );
 }

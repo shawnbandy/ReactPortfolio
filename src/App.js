@@ -5,9 +5,11 @@ import Header from './components/Header';
 import Navbar from './components/NavBar';
 import Project from './components/Project';
 
+const classes = 'container text-center';
+
 function App() {
   return (
-    <main>
+    <main className={classes}>
       <Header />
       <Navbar />
       <Project />
