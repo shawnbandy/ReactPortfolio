@@ -1,4 +1,5 @@
 import React from 'react';
+import Picture from './ProjectComponents/Pictures';
 
 const classes = {
   mainbody: 'container border border-danger',
@@ -11,7 +12,7 @@ function Project() {
       <h1>Welcome main Body</h1>
       <div className={classes.aboutMe}>
         <p>About Me section</p>
-        <p>Picture of me</p>
+        <Picture />
         <p>Bio of me</p>
         <p>images of projects and links to them</p>
         <p>image of codewars problems and explanation on how I did it</p>
