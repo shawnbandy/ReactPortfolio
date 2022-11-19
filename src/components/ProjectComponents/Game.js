@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Display from '../GameComponents/display';
 import {
   whiteB,
   grayB,
@@ -20,12 +21,15 @@ function Game() {
           it!
         </u>
       </h2>
-      <h4>
+      <h5>
         The rules remain just as above, <u>except</u> if you roll a scoring
-        value,<br></br> you can choose any number of dice <u>other</u> than the
-        scored dice to reroll.<br></br> Press the 'roll' button to roll dice,
-        and then type in the dice you wish to keep.
-      </h4>
+        value,<br></br> you can choose any number of dice <u>other</u> than
+        scoring dice to reroll.<br></br> If <b>all</b> of your dice are scoring
+        dice, then you can click 'Continue to Roll',<br></br> which will start a
+        new round.<br></br> Press the 'New Game' button to start a new game,
+        <br></br> click the numbers if you wish to reroll them.
+      </h5>
+      <Display />
     </section>
   );
 }

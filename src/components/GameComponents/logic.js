@@ -4,7 +4,22 @@ class DiceGame {
     this.score = score;
   }
 
+  get getArray() {
+    return this.array;
+  }
+
+  get getScore() {
+    return this.score;
+  }
+
   startGame() {
+    if (this.array.length > 0) {
+      this.array = [];
+    }
+    for (let i = 0; i < 5; i++) {
+      this.array.push(this.randomNumber());
+    }
+    console.log('new game started, values are: ', this.array);
     return this.scoreDice(this.array);
   }
   randomNumber() {
@@ -12,11 +27,12 @@ class DiceGame {
     return diceNumbers;
   }
 
-  checkNumbers(selected) {
+  rerollNumbers([selected]) {
     //*a user selects numbers to reroll
     //*roll new numbers, calculate their score value. if it's 0, you lose
     //*take out the old numbers, put in the new numbers
     const reroll = [];
+    console.log('selected', selected);
 
     for (let i = 0; i < selected.length; i++) {
       reroll.push(this.randomNumber());
@@ -39,7 +55,7 @@ class DiceGame {
     for (let i = 0; i < reroll.length; i++) {
       this.array.push(reroll[i]);
     }
-
+    console.log('-----------', this.array);
     return this.array;
   }
 
@@ -56,11 +72,16 @@ class DiceGame {
         tempArr = [];
         i = i + 2;
       } else {
-        sortedDice[i] == 1
-          ? (score += 100)
-          : sortedDice[i] == 5
-          ? (score += 50)
-          : score;
+        switch (sortedDice[i]) {
+          case 1:
+            score += 100;
+            break;
+          case 5:
+            score += 50;
+            break;
+          default:
+            break;
+        }
       }
     }
 
@@ -98,20 +119,7 @@ class DiceGame {
   }
 }
 
-let globalScore = 0;
-
 //*starts a new game with set params for now.
 //*startGame will score the dice and return an int value
-let dicegame = new DiceGame([1, 1, 1, 3, 6], 0);
-const game1 = dicegame.startGame();
 
-//*now we want to reroll the dice
-console.log('------------------ pre check');
-const check = dicegame.checkNumbers([3, 6]);
-
-globalScore = dicegame.score;
-
-console.log('globalscore', globalScore);
-console.log('------------------ continue');
-dicegame.continueGame('continue');
-console.log('dg', dicegame.score);
+export default DiceGame;

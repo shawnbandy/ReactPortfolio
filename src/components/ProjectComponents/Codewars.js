@@ -61,7 +61,11 @@ function Codewars() {
         array with five six-sided dice values.<br></br> A single die can only be
         counted once in each roll.<br></br> For example, a given "5" can only
         count as part of a triplet (contributing to the 500 points) or as a
-        single 50 points, but not both in the same roll.
+        single 50 points, but not both in the same roll.<br></br> Only 1s and 5s
+        are worth value as a single, 100 and 50 points respectively.<br></br>{' '}
+        All other numbers are only worth value if they are part of a triplet.
+        <br></br>Rolling '1, 2, 4, 4, 4' will award you 500 points:<br></br> 100
+        from the 1 and 400 from the 4, 4, 4.
       </p>
       <div className="">
         <button
