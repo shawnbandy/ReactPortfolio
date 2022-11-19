@@ -1,7 +1,7 @@
 import React from 'react';
 
 const classes = {
-  footer: 'fixed-bottom border border-primary',
+  footer: 'border border-primary mt-auto',
 };
 
 function Footer() {

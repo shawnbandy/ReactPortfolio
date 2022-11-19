@@ -3,6 +3,8 @@ import Codewars from './ProjectComponents/Codewars';
 import Picture from './ProjectComponents/Pictures';
 import Biography from './ProjectComponents/Biography';
 import Projects from './ProjectComponents/ghProject';
+import Game from './ProjectComponents/Game';
+import { whiteB } from './ProjectComponents/colors';
 
 const classes = {
   mainbody: 'container border border-danger',
@@ -11,13 +13,14 @@ const classes = {
 
 function Project() {
   return (
-    <section className={classes.mainbody}>
+    <section className={classes.mainbody} style={whiteB}>
       <h1>About Me</h1>
       <div className={classes.aboutMe}>
         <Picture />
         <Biography />
         <Projects />
         <Codewars />
+        <Game />
       </div>
     </section>
   );
