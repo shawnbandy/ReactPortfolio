@@ -1,6 +1,11 @@
 class DiceGame {
   constructor(array) {
     this.array = array;
+    this.score = score;
+  }
+
+  get score() {
+    return this.score;
   }
 
   startGame() {
@@ -17,9 +22,20 @@ class DiceGame {
     return diceNumbers;
   }
 
-  checkNumbers(selected) {}
+  checkNumbers(selected) {
+    //*a user selects numbers to reroll
+    //*roll new numbers, calculate their score value. if it's 0, you lose
+    //*take out the old numbers, put in the new numbers
+    const reroll = [];
 
-  score(dice) {
+    for (let i = 0; i > selected.length; i++) {
+      reroll.push(this.randomNumber());
+    }
+
+    this.score += this.scoreDice(reroll);
+  }
+
+  scoreDice(dice) {
     const sortedDice = dice.sort();
     let score = 0;
     let tempArr = [];
@@ -38,6 +54,7 @@ class DiceGame {
           : score;
       }
     }
+    this.score += score;
     return score;
   }
 
@@ -54,4 +71,4 @@ const dicegame = new DiceGame([]);
 const game1 = dicegame.startGame();
 
 console.log(game1);
-console.log(dicegame.score(game1));
+console.log(dicegame.scoreDice(game1));
