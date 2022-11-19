@@ -14,7 +14,7 @@ import NavTabs from './ghProjItems/NavTabs';
 import Display from './ghProjItems/display';
 
 function Projects() {
-  const [currentPage, setCurrentPage] = useState('BudgetBuddy');
+  const [currentPage, setCurrentPage] = useState('SwiftNews');
 
   const handlePageChange = (page) => setCurrentPage(page);
 
