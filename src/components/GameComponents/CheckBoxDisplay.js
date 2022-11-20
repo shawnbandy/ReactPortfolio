@@ -51,7 +51,7 @@ function CheckBoxDisplay(numberArr) {
     }
   }
 
-  return { checkboxElementArray };
+  return checkboxElementArray;
 }
 
 export default CheckBoxDisplay;

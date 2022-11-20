@@ -101,6 +101,7 @@ function Display() {
             </button>
           </div>
           <div className="container row justify-content-center">
+            <CheckBoxDisplay numberArr={numberDisplay} />
             <div class="col-2">
               <input
                 class="form-check-input"
