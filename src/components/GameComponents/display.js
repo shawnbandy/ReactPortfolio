@@ -10,11 +10,15 @@ import {
   darkBC,
 } from '../ProjectComponents/colors';
 import DiceGame from './logic';
+//*can't get this to work for some reason
+import CheckBoxDisplay from './CheckBoxDisplay';
 
 const classes = {
   numberGameDisplay: 'col-2 border border-dark justify-content-center',
   buttons: 'btn',
   buttonsDisabled: 'btn disabled',
+  checkbox: 'form-check-input',
+  checkboxBlackout: 'form-check-input disabled',
 };
 
 const styles = {
@@ -27,6 +31,12 @@ function Display() {
   const [numberDisplay, setNumberDisplay] = useState([]);
   const [numbersToReroll, setNumbersToReroll] = useState([]);
   const diceGame = new DiceGame([], 0);
+
+  const checkUseableNumber = (currentNum) => {
+    if (currentNum == 1 || currentNum == 5) {
+      return true;
+    }
+  };
 
   //*start a new game
   const startNewGame = (e) => {
@@ -85,7 +95,8 @@ function Display() {
               className="btn col-3"
               style={darkBB}
               type="button"
-              onClick={startNewGame}>
+              onClick={startNewGame}
+            >
               <p style={grayC}>New Game</p>
             </button>
           </div>
@@ -94,31 +105,34 @@ function Display() {
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox1"
+                id="inlineCheckbox"
                 value={numberDisplay[0]}
+                disabled={checkUseableNumber(numberDisplay[0])}
               />
             </div>
             <div class="col-2">
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox1"
+                id="inlineCheckbox"
                 value={numberDisplay[1]}
+                disabled={checkUseableNumber(numberDisplay[1])}
               />
             </div>
             <div class="col-2">
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox1"
+                id="inlineCheckbox"
                 value={numberDisplay[2]}
+                disabled={checkUseableNumber(numberDisplay[2])}
               />
             </div>
             <div class="col-2">
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox1"
+                id="inlineCheckbox"
                 value={numberDisplay[3]}
               />
             </div>
@@ -126,7 +140,7 @@ function Display() {
               <input
                 class="form-check-input"
                 type="checkbox"
-                id="inlineCheckbox1"
+                id="inlineCheckbox"
                 value={numberDisplay[4]}
               />
             </div>
@@ -166,7 +180,8 @@ function Display() {
             className="btn m-1 col-4"
             style={darkBB}
             type="button"
-            onClick={rerollSelected}>
+            onClick={rerollSelected}
+          >
             {/*only allow them to select if those values are unscored values be possible based on array values */}
             <p style={grayC}>Reroll Selected</p>
           </button>
