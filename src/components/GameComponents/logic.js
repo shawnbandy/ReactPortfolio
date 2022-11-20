@@ -66,7 +66,7 @@ class DiceGame {
     let tempArr = [];
 
     for (let i = 0; i < sortedDice.length; i++) {
-      if (sortedDice[i] == sortedDice[i + 2]) {
+      if (sortedDice[i] === sortedDice[i + 2]) {
         tempArr.push(sortedDice[i], sortedDice[i + 1], sortedDice[i + 2]);
         score += this.multiplier(tempArr[0]);
         tempArr = [];
@@ -86,7 +86,7 @@ class DiceGame {
     }
 
     //*checks to see if you have a score, if not, you lose
-    if (score == 0) {
+    if (score === 0) {
       this.continueGame('lose');
     }
 
@@ -95,7 +95,7 @@ class DiceGame {
   }
 
   multiplier(number) {
-    if (number == 1) {
+    if (number === 1) {
       return 1000;
     } else {
       return number * 100;
@@ -108,7 +108,7 @@ class DiceGame {
         console.log(`You lost! Your final score is: ${this.score}`);
         return this.score;
       }
-      case 'continue': {
+      default: {
         this.array = [];
         for (let i = 0; i < 5; i++) {
           this.array.push(this.randomNumber());
