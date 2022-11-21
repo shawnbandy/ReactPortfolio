@@ -68,7 +68,11 @@ function Biography() {
           <p style={darkBC}>
             My hobbies are: gaming, cycling, learning guitar, hiking,
             racketball, photography, and of course, coding! I also love to cook,
-            bake,
+            bake, hang out with friends, and try new foods and drinks.
+          </p>
+          <p style={darkBC}>
+            Some fun facts about me are that I played CS:GO semi-professionally,
+            have a black belt in karate, and make sourdough!
           </p>
           <p style={darkBC}>
             I am from Atlanta, but live currently in Ronaoke, VA with my wife

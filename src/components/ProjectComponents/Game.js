@@ -34,7 +34,7 @@ function Game() {
           to 2000 points wins the game.<br></br> You choose when to stop
           rolling, record your points, and then pass the dice. <br></br> If you
           score 0 points on a roll, including any dice rerolled, you bust and
-          loose all your points for that round.
+          lose all your points for that round.
         </i>
       </h5>
       <Display />
