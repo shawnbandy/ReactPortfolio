@@ -29,6 +29,8 @@ class DiceGame {
     }
     console.log('new game started, values are: ', this.array);
 
+    console.log('this.arry', this.getArray);
+
     return this.scoreDice(this.array);
   }
   randomNumber() {
@@ -36,40 +38,28 @@ class DiceGame {
     return diceNumbers;
   }
 
-  rerollNumbers(selected) {
-    console.log('rerolling ', selected);
-    console.log('this.array', this.array);
+  rerollNumbers(selected, original) {
+    //*create rerolled numbers, score them, replace the original numbers w/ the new ones, return it
     const reroll = [];
 
     for (let i = 0; i < selected.length; i++) {
       reroll.push(this.randomNumber());
     }
 
-    console.log('random dice added', reroll);
-
     //*This scores the rerolled dice
     this.scoreDice(reroll);
 
-    //*removes the selected dice to reroll from this.array
-    for (let i = 0; i < this.array.length; i++) {
-      for (let j = 0; j < selected.length; j++) {
-        if (this.array[i] === selected[j]) {
-          this.array.splice(i, 1);
-          selected.shift();
-          j--;
-        }
-      }
+    for (let i = 0; i < selected.length; i++) {
+      original[selected[i]] = reroll[i];
     }
 
-    for (let i = 0; i < reroll.length; i++) {
-      this.array.push(reroll[i]);
-    }
+    this.array = original;
+
     console.log('-----------', this.array);
     return this.array;
   }
 
   scoreDice(dice) {
-    console.log('scoring dice', dice);
     const sortedDice = dice.sort();
     let score = 0;
     let tempArr = [];
@@ -115,7 +105,7 @@ class DiceGame {
     switch (state) {
       case 'lose': {
         console.log(`You lost! Your final score is: ${this.score}`);
-        return this.score;
+        return true;
       }
       default: {
         this.array = [];

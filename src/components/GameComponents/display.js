@@ -17,8 +17,9 @@ function Display() {
   const [highScore, setHighScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [numberDisplay, setNumberDisplay] = useState([]);
-  const [numbersToReroll, setNumbersToReroll] = useState([]);
-  const [resetForm, setResetForm] = useState('');
+  const [diceArray, setDiceArray] = useState([]);
+  const [diceScore, setDiceScore] = useState(0);
+  const [busted, setBusted] = useState(false);
   const diceGame = new DiceGame([], 0);
 
   //*start a new game
@@ -27,16 +28,18 @@ function Display() {
     diceGame.startGame();
 
     setNumberDisplay(diceGame.getArray);
-    diceGame.setArray = diceGame;
+    setDiceArray(diceGame.getArray);
+
     console.log('startNewGame dicegame Array', diceGame.getArray);
+
     setCurrentScore(diceGame.getScore);
-    setNumbersToReroll([]);
+    setDiceScore(diceGame.getScore);
+
     document.getElementById('rerollSelectorForm').reset();
   };
 
   //*rerolls selected values based on.... checkbox? form submission?
   const rerollSelected = (e) => {
-    console.log('rerollselected dicegame Array', diceGame.getArray);
     e.preventDefault();
     const numbersSelected = [];
 
@@ -46,9 +49,9 @@ function Display() {
       }
     }
 
-    diceGame.rerollNumbers(numbersSelected);
+    diceGame.rerollNumbers(numbersSelected, diceArray);
     setNumberDisplay(diceGame.getArray);
-    setCurrentScore(diceGame.getScore);
+    setCurrentScore(currentScore + diceGame.getScore);
     e.target.reset();
   };
 
@@ -73,15 +76,17 @@ function Display() {
           <p style={whiteC}>Dice Game: Greed</p>
         </h1>
         <section className="card-body">
-          <h3>HighScore: {highScore}</h3>
-          <h5>Current Score: {currentScore}</h5>
+          <div className="container row justify-content-center">
+            <h3>HighScore: {highScore}</h3>
+            <h5>Current Score: {currentScore}</h5>
+            <p className={!busted ? 'd-none' : ''}>You Busted!</p>
+          </div>
           <div className="container row justify-content-center">
             <button
               className="btn col-2"
               style={darkBB}
               type="button"
-              onClick={startNewGame}
-            >
+              onClick={startNewGame}>
               <p style={grayC}>New Game</p>
             </button>
           </div>
@@ -90,8 +95,7 @@ function Display() {
             <form
               className="container row justify-content-center"
               id="rerollSelectorForm"
-              onSubmit={rerollSelected}
-            >
+              onSubmit={rerollSelected}>
               <CheckBoxDisplay numberArr={numberDisplay} />
             </form>
           </div>
@@ -107,8 +111,7 @@ function Display() {
               className="btn col-2"
               style={darkBB}
               type="submit"
-              form="rerollSelectorForm"
-            >
+              form="rerollSelectorForm">
               {/*only allow them to select if those values are unscored values be possible based on array values */}
               <p style={grayC}>Reroll Selected</p>
             </button>
