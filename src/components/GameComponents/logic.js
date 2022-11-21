@@ -8,8 +8,16 @@ class DiceGame {
     return this.array;
   }
 
+  set setArray(newArr) {
+    this.array = newArr;
+  }
+
   get getScore() {
     return this.score;
+  }
+
+  set setScore(newScore) {
+    this.score = newScore;
   }
 
   startGame() {
@@ -20,18 +28,17 @@ class DiceGame {
       this.array.push(this.randomNumber());
     }
     console.log('new game started, values are: ', this.array);
+
     return this.scoreDice(this.array);
   }
   randomNumber() {
-    const diceNumbers = Math.floor(Math.random() * 5) + 1;
+    const diceNumbers = Math.floor(Math.random() * 6) + 1;
     return diceNumbers;
   }
 
   rerollNumbers(selected) {
-    //*a user selects numbers to reroll
-    //*roll new numbers, calculate their score value. if it's 0, you lose
-    //*take out the old numbers, put in the new numbers
     console.log('rerolling ', selected);
+    console.log('this.array', this.array);
     const reroll = [];
 
     for (let i = 0; i < selected.length; i++) {

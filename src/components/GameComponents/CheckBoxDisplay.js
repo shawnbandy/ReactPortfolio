@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function CheckBoxDisplay({ numberArr }) {
   const checkboxElementArray = [];
+  const [reset, setReset] = useState(false);
 
   const checkboxElementDisabled = (valueNum) => {
     return (
@@ -46,8 +47,6 @@ function CheckBoxDisplay({ numberArr }) {
       checkboxElementArray.push(checkboxElementEnabled(numberArr[i]));
     }
   }
-
-  console.log(checkboxElementArray);
 
   return checkboxElementArray;
 }

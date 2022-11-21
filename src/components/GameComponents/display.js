@@ -18,24 +18,28 @@ function Display() {
   const [currentScore, setCurrentScore] = useState(0);
   const [numberDisplay, setNumberDisplay] = useState([]);
   const [numbersToReroll, setNumbersToReroll] = useState([]);
+  const [resetForm, setResetForm] = useState('');
   const diceGame = new DiceGame([], 0);
 
   //*start a new game
   const startNewGame = (e) => {
     e.preventDefault();
     diceGame.startGame();
+
     setNumberDisplay(diceGame.getArray);
+    diceGame.setArray = diceGame;
+    console.log('startNewGame dicegame Array', diceGame.getArray);
     setCurrentScore(diceGame.getScore);
     setNumbersToReroll([]);
+    document.getElementById('rerollSelectorForm').reset();
   };
-
-  const chosenReroll = (e) => {};
 
   //*rerolls selected values based on.... checkbox? form submission?
   const rerollSelected = (e) => {
-    const numbersSelected = [];
+    console.log('rerollselected dicegame Array', diceGame.getArray);
     e.preventDefault();
-    console.log(e.target[0].checked);
+    const numbersSelected = [];
+
     for (let i = 0; i <= 4; i++) {
       if (e.target[i].checked) {
         numbersSelected.push(e.target[i].value);
@@ -45,6 +49,7 @@ function Display() {
     diceGame.rerollNumbers(numbersSelected);
     setNumberDisplay(diceGame.getArray);
     setCurrentScore(diceGame.getScore);
+    e.target.reset();
   };
 
   //*continues to play the game and rerolls
@@ -81,6 +86,7 @@ function Display() {
             </button>
           </div>
           <div className="container row justify-content-center">
+            {/*FORM */}
             <form
               className="container row justify-content-center"
               id="rerollSelectorForm"
