@@ -53,7 +53,7 @@ function Codewars() {
       <h2>
         <u>Codewars</u>
       </h2>
-      <h4>Here's my favorite practice problem I've solved!</h4>
+      <h4>Here's my favorite logic problem I've solved!</h4>
       <p>
         The description is "Greed is a dice game played with five six-sided
         dice.<br></br> Your mission, should you choose to accept it, is to score

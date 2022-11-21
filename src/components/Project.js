@@ -14,7 +14,6 @@ const classes = {
 function Project() {
   return (
     <section className={classes.mainbody} style={whiteB}>
-      <h1>About Me</h1>
       <div className={classes.aboutMe}>
         <Picture />
         <Biography />

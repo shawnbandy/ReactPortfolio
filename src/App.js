@@ -11,7 +11,6 @@ function App() {
   return (
     <main className={classes}>
       <Header />
-      <Navbar />
       <Project />
       <Footer />
     </main>

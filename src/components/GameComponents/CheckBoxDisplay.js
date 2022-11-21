@@ -1,55 +1,53 @@
 import React, { useState } from 'react';
 
-function CheckBoxDisplay(numberArr) {
-  //   const checkUseableNumber = (currentNum) => {
-  //     if (currentNum == 1 || currentNum == 5) {
-  //       return true;
-  //     }
-  //   };
+function CheckBoxDisplay({ numberArr }) {
   const checkboxElementArray = [];
 
-  console.log(checkboxElementArray);
+  const checkboxElementDisabled = (valueNum) => {
+    return (
+      <div class="col-2">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="inlineCheckbox"
+          value={valueNum}
+          disabled
+        />
+      </div>
+    );
+  };
 
-  const checkboxElementDisabled = (valueNum) => (
-    <div class="col-2">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="inlineCheckbox"
-        value={valueNum}
-        disabled="true"
-      />
-    </div>
-  );
+  const checkboxElementEnabled = (valueNum) => {
+    return (
+      <div class="col-2">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="inlineCheckbox"
+          value={valueNum}
+        />
+      </div>
+    );
+  };
 
-  const checkboxElementEnabled = (valueNum) => (
-    <div class="col-2">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        id="inlineCheckbox"
-        value={valueNum}
-        disabled="false"
-      />
-    </div>
-  );
-
-  //*1,2,2,2,3
-  //*1,1,1,2,2
-  //*1,2,3,3,3
-  for (let i = 0; i <= 4; i++) {
+  for (let i = 0; i < numberArr.length; i++) {
     const first = numberArr[i];
+
     const last = numberArr[i + 2];
 
     if (first == last) {
-      for (let j = i; j < i + 2; j++) {
+      for (let j = i; j <= i + 2; j++) {
         checkboxElementArray.push(checkboxElementDisabled(numberArr[j]));
       }
       i < 2 ? (i = i + 2) : (i = i + 3);
+    } else if (numberArr[i] == 1 || numberArr[i] == 5) {
+      checkboxElementArray.push(checkboxElementDisabled(numberArr[i]));
     } else {
-      checkboxElementArray.push(checkboxElementEnabled[numberArr[i]]);
+      checkboxElementArray.push(checkboxElementEnabled(numberArr[i]));
     }
   }
+
+  console.log(checkboxElementArray);
 
   return checkboxElementArray;
 }

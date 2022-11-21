@@ -10,20 +10,8 @@ import {
   darkBC,
 } from '../ProjectComponents/colors';
 import DiceGame from './logic';
-//*can't get this to work for some reason
 import CheckBoxDisplay from './CheckBoxDisplay';
-
-const classes = {
-  numberGameDisplay: 'col-2 border border-dark justify-content-center',
-  buttons: 'btn',
-  buttonsDisabled: 'btn disabled',
-  checkbox: 'form-check-input',
-  checkboxBlackout: 'form-check-input disabled',
-};
-
-const styles = {
-  numberGameDisplay: `background-color: red; color: white`,
-};
+import NumberDisplay from './NumberDisplay';
 
 function Display() {
   const [highScore, setHighScore] = useState(0);
@@ -31,12 +19,6 @@ function Display() {
   const [numberDisplay, setNumberDisplay] = useState([]);
   const [numbersToReroll, setNumbersToReroll] = useState([]);
   const diceGame = new DiceGame([], 0);
-
-  const checkUseableNumber = (currentNum) => {
-    if (currentNum == 1 || currentNum == 5) {
-      return true;
-    }
-  };
 
   //*start a new game
   const startNewGame = (e) => {
@@ -47,17 +29,7 @@ function Display() {
     setNumbersToReroll([]);
   };
 
-  const chosenReroll = (e) => {
-    e.preventDefault();
-    const number = Number(e.target.innerText);
-    if (number == 1 || number == 5) {
-      console.log('Number not added! Select a Valid number');
-    } else {
-      console.log('added ', number);
-      setNumbersToReroll((current) => [...current, number]);
-      //e.target.classList.add('disabled');
-    }
-  };
+  const chosenReroll = (e) => {};
 
   //*rerolls selected values based on.... checkbox? form submission?
   const rerollSelected = (e) => {
@@ -92,100 +64,33 @@ function Display() {
           <h5>Current Score: {currentScore}</h5>
           <div className="container row justify-content-center">
             <button
-              className="btn col-3"
+              className="btn col-2"
               style={darkBB}
               type="button"
-              onClick={startNewGame}
-            >
+              onClick={startNewGame}>
               <p style={grayC}>New Game</p>
             </button>
           </div>
           <div className="container row justify-content-center">
             <CheckBoxDisplay numberArr={numberDisplay} />
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox"
-                value={numberDisplay[0]}
-                disabled={checkUseableNumber(numberDisplay[0])}
-              />
-            </div>
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox"
-                value={numberDisplay[1]}
-                disabled={checkUseableNumber(numberDisplay[1])}
-              />
-            </div>
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox"
-                value={numberDisplay[2]}
-                disabled={checkUseableNumber(numberDisplay[2])}
-              />
-            </div>
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox"
-                value={numberDisplay[3]}
-              />
-            </div>
-            <div class="col-2">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="inlineCheckbox"
-                value={numberDisplay[4]}
-              />
-            </div>
           </div>
           <section className="container row justify-content-center">
-            <div className={classes.numberGameDisplay} style={lightBB}>
-              <button className={classes.buttons} style={whiteC}>
-                {numberDisplay[0]}
-              </button>
-            </div>
-            <div className={classes.numberGameDisplay} style={lightBB}>
-              <button className={classes.buttons} style={whiteC}>
-                {numberDisplay[1]}
-              </button>
-            </div>
-            <div className={classes.numberGameDisplay} style={lightBB}>
-              <button className={classes.buttons} style={whiteC}>
-                {numberDisplay[2]}
-              </button>
-            </div>
-            <div className={classes.numberGameDisplay} style={lightBB}>
-              <button className={classes.buttons} style={whiteC}>
-                {numberDisplay[3]}
-              </button>
-            </div>
-            <div className={classes.numberGameDisplay} style={lightBB}>
-              <button className={classes.buttons} style={whiteC}>
-                {numberDisplay[4]}
-              </button>
-            </div>
+            <NumberDisplay numberArr={numberDisplay} />
           </section>
-          <button className="btn m-1 col-4" style={darkBB} type="button">
-            {/*only allow them to roll if it should be possible based on array values */}
-            <p style={grayC}>Continue to Roll</p>
-          </button>
-          <button
-            className="btn m-1 col-4"
-            style={darkBB}
-            type="button"
-            onClick={rerollSelected}
-          >
-            {/*only allow them to select if those values are unscored values be possible based on array values */}
-            <p style={grayC}>Reroll Selected</p>
-          </button>
+          <div className="container row justify-content-center">
+            <button className="btn col-2" style={darkBB} type="button">
+              {/*only allow them to roll if it should be possible based on array values */}
+              <p style={grayC}>Continue to Roll</p>
+            </button>
+            <button
+              className="btn col-2"
+              style={darkBB}
+              type="button"
+              onClick={rerollSelected}>
+              {/*only allow them to select if those values are unscored values be possible based on array values */}
+              <p style={grayC}>Reroll Selected</p>
+            </button>
+          </div>
         </section>
       </div>
     </section>

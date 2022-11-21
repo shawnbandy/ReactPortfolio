@@ -11,25 +11,38 @@ import {
 } from './ProjectComponents/colors';
 
 const classes = {
-  nav: 'navbar justify-content-around',
+  nav: 'navbar container justify-content-evenly',
   link: 'navbar-brand',
+  button: 'btn btn-outline col-1 align-items-center navbtn',
+};
+
+const styles = {
+  anchor: `${whiteC} `,
 };
 
 function NavBar() {
   return (
     <nav className={classes.nav} style={lightBB}>
-      <a className={classes.link} href="#">
-        <p style={whiteC}>GitHub</p>
-      </a>
-      <a className={classes.link} href="#">
-        <p style={whiteC}>LinkedIn</p>
-      </a>
-      <a className={classes.link} href="#">
-        <p style={whiteC}>Codewars</p>
-      </a>
-      <a className={classes.link} href="#">
-        <p style={whiteC}>Resume</p>
-      </a>
+      <button className={classes.button} style={lightBB}>
+        <a style={whiteC}>
+          <h4>GitHub</h4>
+        </a>
+      </button>
+      <button className={classes.button} style={lightBB}>
+        <a style={whiteC}>
+          <h4>LinkedIn</h4>
+        </a>
+      </button>
+      <button className={classes.button} style={lightBB}>
+        <a style={whiteC}>
+          <h4>Codewars</h4>
+        </a>
+      </button>
+      <button className={classes.button} style={lightBB}>
+        <a style={whiteC}>
+          <h4>Resume</h4>
+        </a>
+      </button>
     </nav>
   );
 }
