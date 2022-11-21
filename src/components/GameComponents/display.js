@@ -18,13 +18,16 @@ function Display() {
   const [currentScore, setCurrentScore] = useState(0);
   const [numberDisplay, setNumberDisplay] = useState([]);
   const [diceArray, setDiceArray] = useState([]);
-  const [diceScore, setDiceScore] = useState(0);
+  //const [diceScore, setDiceScore] = useState(0);
   const [busted, setBusted] = useState(false);
   const diceGame = new DiceGame([], 0);
 
   //*start a new game
   const startNewGame = (e) => {
     e.preventDefault();
+    setBusted(false);
+    document.getElementById('rerollSelectorForm').reset();
+
     diceGame.startGame();
 
     setNumberDisplay(diceGame.getArray);
@@ -32,10 +35,12 @@ function Display() {
 
     console.log('startNewGame dicegame Array', diceGame.getArray);
 
-    setCurrentScore(diceGame.getScore);
-    setDiceScore(diceGame.getScore);
+    if (diceGame.getScore == 0) {
+      setBusted(true);
+      document.getElementById('rerollSelectorForm').disabled = true;
+    }
 
-    document.getElementById('rerollSelectorForm').reset();
+    setCurrentScore(diceGame.getScore);
   };
 
   //*rerolls selected values based on.... checkbox? form submission?
@@ -51,6 +56,12 @@ function Display() {
 
     diceGame.rerollNumbers(numbersSelected, diceArray);
     setNumberDisplay(diceGame.getArray);
+
+    if (diceGame.getScore == 0) {
+      setBusted(true);
+      document.getElementById('rerollSelectorForm').disabled = true;
+    }
+
     setCurrentScore(currentScore + diceGame.getScore);
     e.target.reset();
   };
