@@ -33,11 +33,18 @@ function Display() {
 
   //*rerolls selected values based on.... checkbox? form submission?
   const rerollSelected = (e) => {
+    const numbersSelected = [];
     e.preventDefault();
-    diceGame.rerollNumbers([numbersToReroll]);
+    console.log(e.target[0].checked);
+    for (let i = 0; i <= 4; i++) {
+      if (e.target[i].checked) {
+        numbersSelected.push(e.target[i].value);
+      }
+    }
+
+    diceGame.rerollNumbers(numbersSelected);
     setNumberDisplay(diceGame.getArray);
     setCurrentScore(diceGame.getScore);
-    setNumbersToReroll([]);
   };
 
   //*continues to play the game and rerolls
@@ -47,12 +54,13 @@ function Display() {
     setHighScore(currentScore);
   }
 
-  //TODO Change from pressing the button to a simple check box
-  //TODO have the class of the check box change if it's not supposed to be rerolled
-  //TODO update some of the classes to by DRY
+  // // TODO Change from pressing the button to a simple check box
+  // // TODO have the class of the check box change if it's not supposed to be rerolled
+  // // TODO update some of the classes to by DRY
   //TODO fix the 'continue to roll' logic
-  //?basically use the value from the checkboxes and put that in the array
-  //?move some of these elements into different files since it's getting kinda large?
+  // // ?basically use the value from the checkboxes and put that in the array
+  // // ?move some of these elements into different files since it's getting kinda large?
+  //TODO do a 'pass turn' button that allows computer to roll
   return (
     <section className="container row justify-content-center text-center">
       <div className="card text-center col-8" style={grayB}>
@@ -67,12 +75,19 @@ function Display() {
               className="btn col-2"
               style={darkBB}
               type="button"
-              onClick={startNewGame}>
+              onClick={startNewGame}
+            >
               <p style={grayC}>New Game</p>
             </button>
           </div>
           <div className="container row justify-content-center">
-            <CheckBoxDisplay numberArr={numberDisplay} />
+            <form
+              className="container row justify-content-center"
+              id="rerollSelectorForm"
+              onSubmit={rerollSelected}
+            >
+              <CheckBoxDisplay numberArr={numberDisplay} />
+            </form>
           </div>
           <section className="container row justify-content-center">
             <NumberDisplay numberArr={numberDisplay} />
@@ -85,8 +100,9 @@ function Display() {
             <button
               className="btn col-2"
               style={darkBB}
-              type="button"
-              onClick={rerollSelected}>
+              type="submit"
+              form="rerollSelectorForm"
+            >
               {/*only allow them to select if those values are unscored values be possible based on array values */}
               <p style={grayC}>Reroll Selected</p>
             </button>

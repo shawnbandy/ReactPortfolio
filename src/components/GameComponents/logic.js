@@ -27,16 +27,18 @@ class DiceGame {
     return diceNumbers;
   }
 
-  rerollNumbers([selected]) {
+  rerollNumbers(selected) {
     //*a user selects numbers to reroll
     //*roll new numbers, calculate their score value. if it's 0, you lose
     //*take out the old numbers, put in the new numbers
+    console.log('rerolling ', selected);
     const reroll = [];
-    console.log('selected', selected);
 
     for (let i = 0; i < selected.length; i++) {
       reroll.push(this.randomNumber());
     }
+
+    console.log('random dice added', reroll);
 
     //*This scores the rerolled dice
     this.scoreDice(reroll);
@@ -60,7 +62,7 @@ class DiceGame {
   }
 
   scoreDice(dice) {
-    console.log(dice);
+    console.log('scoring dice', dice);
     const sortedDice = dice.sort();
     let score = 0;
     let tempArr = [];
