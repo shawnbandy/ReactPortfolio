@@ -13,7 +13,7 @@ import {
 function NavTabs({ currentPage, handlePageChange }) {
   return (
     <ul className="nav nav-tabs rounded" style={lightBB}>
-      <li className="nav-item col-3">
+      <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
           href="#SwiftNews"
           style={currentPage === 'SwiftNews' ? darkBC : whiteC}
@@ -24,18 +24,20 @@ function NavTabs({ currentPage, handlePageChange }) {
           SwiftNews
         </a>
       </li>
-      <li className="nav-item col-3">
+      <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
           href="#BudgetBuddy"
           style={currentPage === 'BudgetBuddy' ? darkBC : whiteC}
           onClick={() => handlePageChange('BudgetBuddy')}
           className={
-            currentPage === 'BudgetBuddy' ? 'nav-link active' : 'nav-link'
+            currentPage === 'BudgetBuddy'
+              ? 'nav-link active col-sm-12'
+              : 'nav-link'
           }>
           BudgetBuddy
         </a>
       </li>
-      <li className="nav-item col-3">
+      <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
           href="#CMS"
           onClick={() => handlePageChange('CMS')}
@@ -44,7 +46,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           CMS
         </a>
       </li>
-      <li className="nav-item col-3">
+      <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
           href="#Proj3"
           onClick={() => handlePageChange('Proj3')}

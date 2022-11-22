@@ -13,7 +13,8 @@ import {
 const classes = {
   nav: 'navbar container justify-content-evenly',
   link: 'navbar-brand',
-  button: 'btn btn-outline col-1 align-items-center navbtn',
+  button:
+    'btn btn-outline col-lg-1 col-m-12 col-xs-12 align-items-center navbtn',
 };
 
 const styles = {
@@ -32,8 +33,7 @@ function NavBar() {
         <a
           style={whiteC}
           href="https://www.linkedin.com/in/shawn-canavan/"
-          target="_blank"
-        >
+          target="_blank">
           <h4>LinkedIn</h4>
         </a>
       </button>
@@ -41,8 +41,7 @@ function NavBar() {
         <a
           style={whiteC}
           href="https://www.codewars.com/users/shawnbandy"
-          target="_blank"
-        >
+          target="_blank">
           <h4>Codewars</h4>
         </a>
       </button>
