@@ -42,6 +42,8 @@ class DiceGame {
     //*create rerolled numbers, score them, replace the original numbers w/ the new ones, return it
     const reroll = [];
 
+    console.log('this is ReRollNumbers', this.array);
+
     for (let i = 0; i < selected.length; i++) {
       reroll.push(this.randomNumber());
     }
