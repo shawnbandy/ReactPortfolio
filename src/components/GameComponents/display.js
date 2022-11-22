@@ -178,7 +178,8 @@ function Display() {
               className={classes.buttons}
               style={darkBB}
               type="button"
-              onClick={startNewGame}>
+              onClick={startNewGame}
+            >
               <p style={grayC}>New Game</p>
             </button>
           </div>
@@ -189,7 +190,8 @@ function Display() {
                 className="container row justify-content-center m-0 p-0"
                 id="rerollSelectorForm"
                 onSubmit={rerollSelected}
-                value="1">
+                value="1"
+              >
                 <CheckBoxDisplay numberArr={numberDisplay} />
               </form>
             </fieldset>
@@ -202,25 +204,28 @@ function Display() {
               className={classes.buttons}
               style={darkBB}
               type="button"
-              onClick={continueToRoll}>
+              onClick={continueToRoll}
+            >
               {/*only allow them to roll if it should be possible based on array values */}
-              <p style={grayC}>Continue to Roll</p>
+              <p style={grayC}>Continue</p>
             </button>
             <button
               className={classes.buttons}
               style={darkBB}
               type="submit"
-              form="rerollSelectorForm">
+              form="rerollSelectorForm"
+            >
               {/*only allow them to select if those values are unscored values be possible based on array values */}
-              <p style={grayC}>Reroll Selected</p>
+              <p style={grayC}>Reroll</p>
             </button>
             <button
               className={classes.buttons}
               style={darkBB}
               type="button"
-              onClick={passTurn}>
+              onClick={passTurn}
+            >
               {/*only allow them to select if those values are unscored values be possible based on array values */}
-              <p style={grayC}>Pass Turn</p>
+              <p style={grayC}>Pass</p>
             </button>
             <p>Your Current Roll: {currentScore}</p>
             <p>Computer's Last Roll: {computerCurrentScore}</p>
