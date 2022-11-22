@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ReactPortfolio/static/css/main.c59cc657.css",
+    "main.js": "/ReactPortfolio/static/js/main.a014e63a.js",
+    "index.html": "/ReactPortfolio/index.html",
+    "main.c59cc657.css.map": "/ReactPortfolio/static/css/main.c59cc657.css.map",
+    "main.a014e63a.js.map": "/ReactPortfolio/static/js/main.a014e63a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c59cc657.css",
+    "static/js/main.a014e63a.js"
+  ]
+}
