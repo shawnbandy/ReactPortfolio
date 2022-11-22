@@ -18,12 +18,11 @@ const classes = {
   buttons: 'btn col-sm-12 col-md-12 col-lg-2',
 };
 
-const zero = 0;
-
 function Display() {
   const [yourScore, setYourScore] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
+  const [computerCurrentScore, setComputerCurentScore] = useState(0);
   const [hidden, setHidden] = useState(true);
   const [wins, setWins] = useState(0);
   const [loss, setLoss] = useState(0);
@@ -31,18 +30,21 @@ function Display() {
   const [diceArray, setDiceArray] = useState([]);
   const [busted, setBusted] = useState(false);
   const [disabled, setDisabled] = useState(false);
-  const [canContinue, setCanContinue] = useState(false);
+  const [canContinue, setCanContinue] = useState(true);
 
   //*useMemo//useRef
   const diceGame = new DiceGame([], 0);
 
   const checkBust = (score) => {
-    if (score == 0) {
+    if (score === 0) {
       setBusted(true);
       setCurrentScore(score);
       setDisabled(true);
       console.log('bust', currentScore);
+      return true;
       //passTurn();
+    } else {
+      return false;
     }
   };
 
@@ -54,6 +56,8 @@ function Display() {
     setHidden(true);
     setYourScore(0);
     setComputerScore(0);
+    setComputerCurentScore(0);
+    setCanContinue(true);
     document.getElementById('rerollSelectorForm').reset();
 
     diceGame.startGame();
@@ -92,8 +96,11 @@ function Display() {
 
     diceGame.rerollNumbers(numbersSelected, diceArray);
     setNumberDisplay(diceGame.getArray);
-    checkBust(diceGame.getScore);
-    setCurrentScore(currentScore + diceGame.getScore);
+    const isBust = checkBust(diceGame.getScore);
+
+    if (!isBust) {
+      setCurrentScore(currentScore + diceGame.getScore);
+    }
 
     e.target.reset();
   };
@@ -125,27 +132,30 @@ function Display() {
 
   const passTurn = (e) => {
     e.preventDefault();
-
-    console.log('passTurn', currentScore);
-    if (busted) {
-      console.log(
-        '🚀 ~ file: display.js ~ line 132 ~ passTurn ~ busted',
-        busted
-      );
-      setCurrentScore(zero);
-      console.log(
-        '🚀 ~ file: display.js ~ line 131 ~ passTurn ~ setCurrentScore',
-        currentScore
-      );
-    }
     setYourScore(yourScore + currentScore);
-    setCurrentScore(0);
-    const computerScoreValue = feelingLucky();
-    setHidden(false);
-    if (computerScoreValue != 0) {
-      setComputerScore(computerScore + computerScoreValue);
+    const isWinner = checkWinner(yourScore, computerScore);
+    if (!isWinner) {
+      setCurrentScore(0);
+      const computerScoreValue = feelingLucky();
+      setComputerCurentScore(computerScoreValue);
+      setHidden(false);
+      if (computerScoreValue != 0) {
+        setComputerScore(computerScore + computerScoreValue);
+      }
+      continueGame();
+    } else {
+      setCanContinue(false);
     }
-    continueGame();
+  };
+
+  const checkWinner = (userScore, compScore) => {
+    if (userScore < 2000 && compScore < 2000) {
+      //*no winners
+      return false;
+    } else {
+      userScore > 2000 ? setWins(wins + 1) : setLoss(loss + 1);
+      return true;
+    }
   };
 
   return (
@@ -161,9 +171,7 @@ function Display() {
             <h3>Your Score: {yourScore}</h3>
             <h5>Computer Score: {computerScore}</h5>
             <p className={!busted ? 'd-none' : ''}>You Busted!</p>
-            <p className={!canContinue ? 'd-none' : ''}>
-              You can continue to roll or pass the dice.
-            </p>
+            <p className={canContinue ? 'd-none' : ''}>You won!</p>
           </div>
           <div className="container row justify-content-center">
             <button
@@ -215,7 +223,7 @@ function Display() {
               <p style={grayC}>Pass Turn</p>
             </button>
             <p>Your Current Roll: {currentScore}</p>
-            <p>Computer's Last Roll: {computerScore}</p>
+            <p>Computer's Last Roll: {computerCurrentScore}</p>
           </div>
         </section>
       </div>

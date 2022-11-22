@@ -16,11 +16,19 @@ function Game() {
   return (
     <section className="container row justify-content-center text-center mt-3">
       <h2>
-        <u>
-          I liked the above problem so much, that I made a game revolving around
-          it!
-        </u>
+        I liked the above problem so much, that I made a game about around it!
       </h2>
+      <h3>Rules</h3>
+      <h5>
+        Click 'new game' to start a new game at any time.<br></br>5 dice will be
+        rolled and their values shown in ascending order. The game will
+        automatically score your dice.<br></br>
+        1s are worth 100 points, 5s are worth 50 points.<br></br>
+        Any three of a kind is given a 100x point multiplier, except 1s, which
+        is 1000 points instead.<br></br>
+        Use the checkbox above each dice to select the dice to reroll. Only
+        non-scoring dice can be rerolled.<br></br>
+      </h5>
       <h5>
         The rules remain just as above, <u>except</u> if you roll a scoring
         value,<br></br> you can choose any number of dice <u>other</u> than
