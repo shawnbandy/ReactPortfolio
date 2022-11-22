@@ -25,7 +25,10 @@ function Game() {
   };
 
   return (
-    <section className="container row justify-content-center text-center mt-3">
+    <section
+      id="game"
+      className="container row justify-content-center text-center mt-3"
+    >
       <h2>
         I liked the above problem so much, that I made a game about around it!
       </h2>

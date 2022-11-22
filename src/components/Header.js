@@ -13,7 +13,7 @@ import {
 
 function Header() {
   return (
-    <header className="border border-primary" style={lightBB}>
+    <header className="border border-primary" id="header" style={lightBB}>
       <h1 style={whiteC}>Hello, I'm Shawn.</h1>
       <h5 style={whiteC}>
         I am a Full Stack Web Developer living in Roanoke, VA.

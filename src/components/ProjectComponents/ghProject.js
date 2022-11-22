@@ -19,7 +19,10 @@ function Projects() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <section className="container row justify-content-center text-center mt-3">
+    <section
+      id="projects"
+      className="container row justify-content-center text-center mt-3"
+    >
       <h2>
         <u>Projects</u>
       </h2>

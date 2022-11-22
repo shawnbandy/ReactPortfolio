@@ -49,7 +49,7 @@ function Codewars() {
   };
 
   return (
-    <section className={classes.section}>
+    <section id="code" className={classes.section}>
       <h2>
         <u>Codewars</u>
       </h2>

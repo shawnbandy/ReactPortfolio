@@ -18,7 +18,10 @@ const classes = {
 
 function Biography() {
   return (
-    <section className="container row justify-content-center text-center mt-3">
+    <section
+      id="biography"
+      className="container row justify-content-center text-center mt-3"
+    >
       <h2>
         <u>Biography</u>
       </h2>
