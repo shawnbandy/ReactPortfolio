@@ -1,16 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Display from '../GameComponents/display';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './colors';
+import { darkBB, whiteC, lightBC } from './colors';
 
 function Game() {
   const [howTo, setHowTo] = useState(false);
@@ -27,8 +18,7 @@ function Game() {
   return (
     <section
       id="game"
-      className="container row justify-content-center text-center mt-3"
-    >
+      className="container row justify-content-center text-center mt-3">
       <h2>
         I liked the above problem so much, that I made a game about around it!
       </h2>
@@ -37,8 +27,7 @@ function Game() {
         className="btn m-1 col-1"
         style={darkBB}
         type="button"
-        onClick={flipH}
-      >
+        onClick={flipH}>
         <p style={whiteC}>Show</p>
       </button>
       <h5 className={!howTo ? 'd-none' : ''}>
@@ -59,8 +48,7 @@ function Game() {
         className="btn m-1 col-1"
         style={darkBB}
         type="button"
-        onClick={flipR}
-      >
+        onClick={flipR}>
         <p style={whiteC}>Show</p>
       </button>
       <h5 className={!rules ? 'd-none' : ''}>

@@ -1,16 +1,7 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './colors';
+import { grayB, lightBB, darkBB, whiteC, grayC } from './colors';
 
 const wedding1 = require('../../assets/img/wedding1.JPG');
 const wedding = require('../../assets/img/wedding.JPG');
@@ -73,7 +64,7 @@ function Picture() {
         <div className="card-body">
           <div className="container">
             <img
-              alt="Image of Shawn Canavan"
+              alt="Shawn Canavan"
               className="col-8 rounded"
               src={images[count]}
             />

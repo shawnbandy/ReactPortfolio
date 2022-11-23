@@ -1,15 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './colors';
+import { useState } from 'react';
+import { grayB } from './colors';
 import NavTabs from './ghProjItems/NavTabs';
 import Display from './ghProjItems/display';
 
@@ -21,8 +12,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="container row justify-content-center text-center mt-3"
-    >
+      className="container row justify-content-center text-center mt-3">
       <h2>
         <u>Projects</u>
       </h2>

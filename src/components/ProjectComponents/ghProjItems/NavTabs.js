@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from '../colors';
+import { lightBB, whiteC, darkBC } from '../colors';
 
 function NavTabs({ currentPage, handlePageChange }) {
   return (

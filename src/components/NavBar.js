@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './ProjectComponents/colors';
+import { lightBB, whiteC } from './ProjectComponents/colors';
 
 const classes = {
   nav: 'navbar container justify-content-evenly',
@@ -17,15 +8,15 @@ const classes = {
     'btn btn-outline col-lg-1 col-m-12 col-xs-12 align-items-center navbtn',
 };
 
-const styles = {
-  anchor: `${whiteC} `,
-};
-
 function NavBar() {
   return (
     <nav className={classes.nav} style={lightBB}>
       <button className={classes.button} style={lightBB}>
-        <a style={whiteC} href="https://github.com/shawnbandy" target="_blank">
+        <a
+          style={whiteC}
+          href="https://github.com/shawnbandy"
+          target="_blank"
+          rel="noreferrer">
           <h4>GitHub</h4>
         </a>
       </button>
@@ -33,7 +24,8 @@ function NavBar() {
         <a
           style={whiteC}
           href="https://www.linkedin.com/in/shawn-canavan/"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           <h4>LinkedIn</h4>
         </a>
       </button>
@@ -41,7 +33,8 @@ function NavBar() {
         <a
           style={whiteC}
           href="https://www.codewars.com/users/shawnbandy"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           <h4>Codewars</h4>
         </a>
       </button>

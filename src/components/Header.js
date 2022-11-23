@@ -1,15 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './ProjectComponents/colors';
+import { lightBB, whiteC } from './ProjectComponents/colors';
 
 function Header() {
   return (

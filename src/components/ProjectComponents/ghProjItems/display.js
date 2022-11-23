@@ -1,14 +1,4 @@
 import React from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from '../colors';
 
 const classes = {
   display: 'd-block',
@@ -29,7 +19,7 @@ function Display({ currentPage }) {
           currentPage === 'SwiftNews' ? classes.display : classes.hidden
         }>
         <img
-          alt="Image of news application"
+          alt="news application"
           className="col-12 rounded"
           src={images[0]}
         />
@@ -57,7 +47,7 @@ function Display({ currentPage }) {
           currentPage === 'BudgetBuddy' ? classes.display : classes.hidden
         }>
         <img
-          alt="Image of BudBud financial application"
+          alt="BudBud financial application"
           className="col-12 rounded"
           src={images[1]}
         />
@@ -86,7 +76,7 @@ function Display({ currentPage }) {
       </div>
       <div className={currentPage === 'CMS' ? classes.display : classes.hidden}>
         <img
-          alt="Image of a content management system"
+          alt="content management system"
           className="col-12 rounded"
           src={images[2]}
         />

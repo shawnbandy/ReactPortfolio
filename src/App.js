@@ -2,7 +2,6 @@ import React from 'react';
 //*import the components of each one
 import Footer from './components/Footer';
 import Header from './components/Header';
-import Navbar from './components/NavBar';
 import Project from './components/Project';
 
 const classes = 'container text-center';

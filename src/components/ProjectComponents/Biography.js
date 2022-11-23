@@ -1,15 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './colors';
+
+import { grayB, lightBB, whiteC, darkBC } from './colors';
 
 const classes = {
   div: 'card col-lg-3  col-sm-12 col-md-6',
@@ -20,8 +11,7 @@ function Biography() {
   return (
     <section
       id="biography"
-      className="container row justify-content-center text-center mt-3"
-    >
+      className="container row justify-content-center text-center mt-3">
       <h2>
         <u>Biography</u>
       </h2>
@@ -38,8 +28,11 @@ function Biography() {
             <p style={darkBC}>
               Previously, I graduated with my Master of Science in Biology from
               Georgia State University in 2021. You can read my Master's Thesis
-              <a href="#"> here!</a> It was a lot of work to finish, but you can
-              see the final product in the above pictures.
+              <a href="../../mastersThesis.pdf" download>
+                here!
+              </a>
+              It was a lot of work to finish, but you can see the final product
+              in the above pictures.
             </p>
           </div>
         </div>

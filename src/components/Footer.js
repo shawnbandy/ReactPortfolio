@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './ProjectComponents/colors';
+import { lightBB, whiteC } from './ProjectComponents/colors';
 
 const classes = {
   footer: 'container row justify-content-evenly border border-primary mt-2',
@@ -33,7 +24,7 @@ function Footer() {
               style={whiteC}
               href="https://www.facebook.com/shawn.canavan"
               target="_blank"
-            >
+              rel="noreferrer">
               <h4>🙂📘</h4>
             </a>
           </button>
@@ -45,14 +36,14 @@ function Footer() {
               style={whiteC}
               href="https://www.linkedin.com/in/shawn-canavan/"
               target="_blank"
-            >
+              rel="noreferrer">
               <h4>🔗</h4>
             </a>
           </button>
         </div>
         <div class="col">
           <button className={classes.button} style={lightBB}>
-            <a style={whiteC}>
+            <a style={whiteC} href="#">
               <h4>©</h4>
             </a>
           </button>

@@ -1,15 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import {
-  whiteB,
-  grayB,
-  lightBB,
-  darkBB,
-  whiteC,
-  grayC,
-  lightBC,
-  darkBC,
-} from './colors';
+import { useState } from 'react';
+import { darkBB, whiteC } from './colors';
 
 const classes = {
   section: 'container row justify-content-center text-center mt-3',
