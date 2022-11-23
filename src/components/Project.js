@@ -7,7 +7,7 @@ import Game from './ProjectComponents/Game';
 import { whiteB } from './ProjectComponents/colors';
 
 const classes = {
-  mainbody: 'container border border-danger',
+  mainbody: 'container',
   aboutMe: 'text-center fs-5',
 };
 
