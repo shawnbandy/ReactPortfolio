@@ -15,7 +15,11 @@ const classes = {
   hidden: 'd-none',
 };
 
-const images = ['./img/SwiftNews.PNG', './img/bb.png', './img/CMS.png'];
+const sn = require('../../../assets/img/SwiftNews.png');
+const bb = require('../../../assets/img/bb.png');
+const cms = require('../../../assets/img/CMS.png');
+
+const images = [sn, bb, cms];
 
 function Display({ currentPage }) {
   return (

@@ -12,17 +12,28 @@ import {
   darkBC,
 } from './colors';
 
+const wedding1 = require('../../assets/img/wedding1.JPG');
+const wedding = require('../../assets/img/wedding.JPG');
+const sharpTop = require('../../assets/img/sharpTop.JPEG');
+const dragontooth = require('../../assets/img/dragontooth.JPEG');
+const cove = require('../../assets/img/cove.JPEG');
+const pR = require('../../assets/img/PR.JPEG');
+const rockysteps = require('../../assets/img/rockysteps.jpeg');
+const meandjo = require('../../assets/img/meandjo.JPEG');
+const jo = require('../../assets/img/jo.png');
+const masterGel = require('../../assets/img/masterGel.PNG');
+
 const images = [
-  './img/wedding1.JPG',
-  './img/wedding.JPG',
-  './img/sharpTop.JPEG',
-  './img/dragontooth.JPEG',
-  './img/cove.JPEG',
-  './img/PR.JPEG',
-  './img/masterGel.PNG',
-  './img/rockysteps.JPEG',
-  './img/meandjo.JPEG',
-  './img/jo.png',
+  wedding1,
+  wedding,
+  sharpTop,
+  dragontooth,
+  cove,
+  pR,
+  masterGel,
+  rockysteps,
+  meandjo,
+  jo,
 ];
 
 const captions = [
@@ -54,8 +65,7 @@ function Picture() {
   return (
     <div
       className="container row justify-content-center text-center mt-3"
-      id="aboutme"
-    >
+      id="aboutme">
       <div className="card text-center col-8" style={grayB}>
         <h1 className="card-header rounded-bottom" style={lightBB}>
           <p style={whiteC}>Get to Know Me</p>
@@ -73,16 +83,14 @@ function Picture() {
             className="btn m-1"
             style={darkBB}
             type="button"
-            onClick={backwardClick}
-          >
+            onClick={backwardClick}>
             <p style={grayC}>Prev</p>
           </button>
           <button
             className="btn m-1"
             style={darkBB}
             type="button"
-            onClick={forwardClick}
-          >
+            onClick={forwardClick}>
             <p style={grayC}>Next</p>
           </button>
         </div>

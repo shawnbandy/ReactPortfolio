@@ -17,12 +17,14 @@ const classes = {
   imgShow: 'rounded',
 };
 
+const answer = require('../../assets/img/greed.png');
+
 const imgDisplay = (
   <div className="col-12">
     <img
       alt="Image of Shawn Canavan"
       className={classes.imgShow}
-      src="./img/greed.png"
+      src={answer}
     />
     <figcaption>
       So! Maybe a little verbose, but I think it's pretty nifty.<br></br> We
@@ -73,8 +75,7 @@ function Codewars() {
           className="btn m-1"
           style={darkBB}
           type="button"
-          onClick={toggleDisplay}
-        >
+          onClick={toggleDisplay}>
           <p style={whiteC}>Show my answer!</p>
         </button>
         {display ? imgDisplay : null}
