@@ -29,6 +29,7 @@
 ### Game
 1. Section continues the coding problem, but expands upon it by making a full game the user can play.
 2. The user plays against the computer, which is also fully coded.
+3. Some features may be a little buggy as they are still under development. 
 
 ### Footer
 1. Includes more ways to reach me
