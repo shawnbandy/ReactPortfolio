@@ -3,11 +3,36 @@
 ## Application Specifics
 
 1. This application uses a mobile-first design and gives a developer background for me, Shawn Canavan. 
-2. You can find my LinkedIn, GitHub, Codewars, and Resume in the header. 
-3. The body contains pictures of me, my academic background, professional history, person information, and future plans. 
-4. To give the viewer an example of my early code, there is a coding problem from Codewars along with my solution. 
-5. The coding problem was developed into a game, which you can play right below the example. 
-6. Finally my footer has some social media, email, navigation to other sections, and copyright information.
+2. Application uses React to generate the webpage.
+3. Application has a Game section for the user to pass time
+4. Application includes contact information, my information, and different social links.
+
+### Header
+1. Header has basic person information, as well as links to my github, LinkedIn, Codewars, and Resume download.
+
+### About Me
+1. About me section has multiple images of me and my hobbies.
+2. Scroll through them to get a better understanding of who I am!
+
+### Bio
+1. This section includes all relevant information someone should know about me.
+2. You can click on the download link and read my Master's thesis from graduate school.
+
+### Projects
+1. This section includes 4 recent projects that I have worked on.
+2. Click on each project to read more about it, and to see their repository links.
+
+### Codewars
+1. This section shows an example of how I code problems.
+2. Shows the problem given, and an early solution I did to complete it. 
+
+### Game
+1. Section continues the coding problem, but expands upon it by making a full game the user can play.
+2. The user plays against the computer, which is also fully coded.
+
+### Footer
+1. Includes more ways to reach me
+2. Has links that jumps the user to different sections of the page. 
 
 
 
