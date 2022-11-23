@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "./https://shawnbandy.github.io/ReactPortfolio/static/css/main.c59cc657.css",
-    "main.js": "./https://shawnbandy.github.io/ReactPortfolio/static/js/main.7617112d.js",
-    "index.html": "./https://shawnbandy.github.io/ReactPortfolio/index.html",
-    "main.c59cc657.css.map": "./https://shawnbandy.github.io/ReactPortfolio/static/css/main.c59cc657.css.map",
-    "main.7617112d.js.map": "./https://shawnbandy.github.io/ReactPortfolio/static/js/main.7617112d.js.map"
+    "main.css": "/ReactPortfolio/static/css/main.c59cc657.css",
+    "main.js": "/ReactPortfolio/static/js/main.a014e63a.js",
+    "index.html": "/ReactPortfolio/index.html",
+    "main.c59cc657.css.map": "/ReactPortfolio/static/css/main.c59cc657.css.map",
+    "main.a014e63a.js.map": "/ReactPortfolio/static/js/main.a014e63a.js.map"
   },
   "entrypoints": [
     "static/css/main.c59cc657.css",
-    "static/js/main.7617112d.js"
+    "static/js/main.a014e63a.js"
   ]
 }
