@@ -26,6 +26,8 @@ function Display() {
   const [hidden, setHidden] = useState(true);
   const [wins, setWins] = useState(0);
   const [loss, setLoss] = useState(0);
+  const [didLose, setDidLose] = useState(false);
+  const [btnDisabled, setBtnDisabled] = useState(false);
   const [numberDisplay, setNumberDisplay] = useState([]);
   const [diceArray, setDiceArray] = useState([]);
   const [busted, setBusted] = useState(false);
@@ -52,12 +54,14 @@ function Display() {
   const startNewGame = (e) => {
     e.preventDefault();
     setBusted(false);
+    setDidLose(false);
     setDisabled(false);
     setHidden(true);
     setYourScore(0);
     setComputerScore(0);
     setComputerCurentScore(0);
     setCanContinue(true);
+    setBtnDisabled(false);
     document.getElementById('rerollSelectorForm').reset();
 
     diceGame.startGame();
@@ -132,9 +136,13 @@ function Display() {
 
   const passTurn = (e) => {
     e.preventDefault();
-    setYourScore(yourScore + currentScore);
     const isWinner = checkWinner(yourScore, computerScore);
-    if (!isWinner) {
+    if (isWinner == false) {
+      setYourScore(yourScore + currentScore);
+      console.log(
+        '🚀 ~ file: display.js ~ line 142 ~ passTurn ~ yourScore',
+        yourScore
+      );
       setCurrentScore(0);
       const computerScoreValue = feelingLucky();
       setComputerCurentScore(computerScoreValue);
@@ -142,18 +150,29 @@ function Display() {
       if (computerScoreValue != 0) {
         setComputerScore(computerScore + computerScoreValue);
       }
-      continueGame();
+      const computerWinner = checkWinner(yourScore, computerScore);
+      if (!computerWinner) {
+        continueGame();
+      }
     } else {
-      setCanContinue(false);
+      return;
     }
   };
 
   const checkWinner = (userScore, compScore) => {
-    if (userScore < 2000 && compScore < 2000) {
+    if (userScore < 1960 && compScore < 1960) {
       //*no winners
       return false;
     } else {
-      userScore > 2000 ? setWins(wins + 1) : setLoss(loss + 1);
+      if (userScore >= 2000) {
+        setWins(wins + 1);
+        setCanContinue(false);
+        setBtnDisabled(true);
+      } else {
+        setLoss(loss + 1);
+        setDidLose(true);
+        setBtnDisabled(true);
+      }
       return true;
     }
   };
@@ -172,14 +191,14 @@ function Display() {
             <h5>Computer Score: {computerScore}</h5>
             <p className={!busted ? 'd-none' : ''}>You Busted!</p>
             <p className={canContinue ? 'd-none' : ''}>You won!</p>
+            <p className={!didLose ? 'd-none' : ''}>You lost!</p>
           </div>
           <div className="container row justify-content-center">
             <button
               className={classes.buttons}
               style={darkBB}
               type="button"
-              onClick={startNewGame}
-            >
+              onClick={startNewGame}>
               <p style={grayC}>New Game</p>
             </button>
           </div>
@@ -190,8 +209,7 @@ function Display() {
                 className="container row justify-content-center m-0 p-0"
                 id="rerollSelectorForm"
                 onSubmit={rerollSelected}
-                value="1"
-              >
+                value="1">
                 <CheckBoxDisplay numberArr={numberDisplay} />
               </form>
             </fieldset>
@@ -205,7 +223,7 @@ function Display() {
               style={darkBB}
               type="button"
               onClick={continueToRoll}
-            >
+              disabled={btnDisabled}>
               {/*only allow them to roll if it should be possible based on array values */}
               <p style={grayC}>Continue</p>
             </button>
@@ -214,7 +232,7 @@ function Display() {
               style={darkBB}
               type="submit"
               form="rerollSelectorForm"
-            >
+              disabled={btnDisabled}>
               {/*only allow them to select if those values are unscored values be possible based on array values */}
               <p style={grayC}>Reroll</p>
             </button>
@@ -223,7 +241,7 @@ function Display() {
               style={darkBB}
               type="button"
               onClick={passTurn}
-            >
+              disabled={btnDisabled}>
               {/*only allow them to select if those values are unscored values be possible based on array values */}
               <p style={grayC}>Pass</p>
             </button>
