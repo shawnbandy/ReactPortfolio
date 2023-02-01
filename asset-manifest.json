@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactPortfolio/static/css/main.c59cc657.css",
-    "main.js": "/ReactPortfolio/static/js/main.92e93d2d.js",
+    "main.js": "/ReactPortfolio/static/js/main.860c14af.js",
     "static/media/rockysteps.jpeg": "/ReactPortfolio/static/media/rockysteps.f2aaf18c8f1793e31623.jpeg",
     "static/media/masterGel.PNG": "/ReactPortfolio/static/media/masterGel.5cffe25c7b4c76253d2a.PNG",
     "static/media/SwiftNews.png": "/ReactPortfolio/static/media/SwiftNews.004cfe089dfb8d7c57c7.png",
@@ -11,6 +11,7 @@
     "static/media/jo.png": "/ReactPortfolio/static/media/jo.5f04d4322e51b0998c0d.png",
     "static/media/meandjo.JPEG": "/ReactPortfolio/static/media/meandjo.e0f5c1a28c5032090fd3.JPEG",
     "static/media/cove.JPEG": "/ReactPortfolio/static/media/cove.56f8e5ca7fb61f42e354.JPEG",
+    "static/media/rplace.png": "/ReactPortfolio/static/media/rplace.bbdf294b548f8e146fd4.png",
     "static/media/PR.JPEG": "/ReactPortfolio/static/media/PR.bf5335da0d0da12252aa.JPEG",
     "static/media/wedding.JPG": "/ReactPortfolio/static/media/wedding.10b0bfadfa0a7de829eb.JPG",
     "static/media/CMS.png": "/ReactPortfolio/static/media/CMS.69ee741a6e6f1e4f15bc.png",
@@ -18,10 +19,10 @@
     "static/media/greed.png": "/ReactPortfolio/static/media/greed.ca52f0efa5151b690d52.png",
     "index.html": "/ReactPortfolio/index.html",
     "main.c59cc657.css.map": "/ReactPortfolio/static/css/main.c59cc657.css.map",
-    "main.92e93d2d.js.map": "/ReactPortfolio/static/js/main.92e93d2d.js.map"
+    "main.860c14af.js.map": "/ReactPortfolio/static/js/main.860c14af.js.map"
   },
   "entrypoints": [
     "static/css/main.c59cc657.css",
-    "static/js/main.92e93d2d.js"
+    "static/js/main.860c14af.js"
   ]
 }
