@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Project from './components/Project';
 import { useState } from 'react';
 
-const classes = 'container text-center';
+const classes = 'container text-center h-100';
 
 function App() {
   const [currentNav, setCurrentNav] = useState('AboutMe');

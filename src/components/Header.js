@@ -1,6 +1,12 @@
 import React from 'react';
 import NavBar from './NavBar';
-import { lightBB, whiteC } from './ProjectComponents/colors';
+import {
+  lightBB,
+  whiteC,
+  darkBB,
+  whiteB,
+  grayB,
+} from './ProjectComponents/colors';
 import { useState } from 'react';
 
 function Header({ currentNav, handleNavChange }) {

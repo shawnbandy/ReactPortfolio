@@ -9,17 +9,18 @@ import Main from './Main';
 import Contact from './Contact';
 
 const classes = {
-  mainbody: 'container',
-  aboutMe: 'text-center fs-5',
-  display: 'd-block',
+  mainbody: 'container h-100',
+  aboutMe: 'text-center fs-5 h-100',
+  display: 'd-flex h-100 align-items-center',
   hidden: 'd-none',
 };
 
 function Project({ currentNav, handleNavChange }) {
   return (
-    <section className={classes.mainbody} style={whiteB}>
+    <section id="mainBodyDisplay" className={classes.mainbody} style={whiteB}>
       <div className={classes.aboutMe}>
         <div
+          id="biography"
           className={
             currentNav === 'AboutMe' ? classes.display : classes.hidden
           }>

@@ -14,22 +14,24 @@ import {
 const classes = {
   display: 'd-block',
   hidden: 'd-none',
-  container: 'container row justify-content-evenly mt-3',
+  container: 'container row mt-1 justify-content-center',
   pictureDiv:
     'border border-danger col-md-4 col-sm-12 col-lg-4 align-items-center',
-  description: ' border border-primary col-md-8 cold-sm-12 col-lg-8',
+  description: 'container row col-md-8 cold-sm-12 col-lg-8 w-100 mb-3',
+  cardBody: 'card-body row align-items-center justify-content-center',
+  div: 'card col-lg-6 col-sm-12 col-md-12 p-1 border border-white',
 };
 
 function Main() {
   return (
     <div className={classes.container}>
-      <div className="col align-self-md-center align-self-lg-center w-50 h-50">
+      <h2>
+        <u>Biography</u>
+      </h2>
+      <div className="col-lg-12 col-md-4 col-sm-4 h-50 align-self-md-center align-self-lg-center">
         <Picture />
       </div>
       <div className={classes.description}>
-        <h2>
-          <u>Biography</u>
-        </h2>
         <div className={classes.div} style={grayB}>
           <h5 className="card-header rounded" style={lightBB}>
             <p style={whiteC}>Academic</p>
@@ -37,18 +39,16 @@ function Main() {
           <div className={classes.cardBody}>
             <div>
               <p style={darkBC}>
-                I am currently enrolled in Georgia Tech's Full Stack Coding
-                Bootcamp! Graduating this December 2022.
+                I am a Full Stack Developer that graduated from Georgia Tech!
               </p>
               <p style={darkBC}>
-                Previously, I graduated with my Master of Science in Biology
-                from Georgia State University in 2021. You can read my Master's
-                Thesis
+                I hold a Master of Science in Biology from Georgia State
+                University, received in 2021. You can read my Master's Thesis{' '}
                 <a href="../../mastersThesis.pdf" download>
                   here!
-                </a>
-                It was a lot of work to finish, but you can see the final
-                product in the above pictures.
+                </a>{' '}
+                It was a lot of work to finish, and you can see the final
+                product in the pictures.
               </p>
             </div>
           </div>
@@ -69,7 +69,9 @@ function Main() {
               support, analyses, performed experiments, as well as project
               managed the lab and its members for success.
             </p>
-            <p style={darkBC}>Download my full resume in the header!</p>
+            <p style={darkBC}>
+              Download my full resume in the contact tab above!
+            </p>
           </div>
         </div>
         <div className={classes.div} style={grayB}>

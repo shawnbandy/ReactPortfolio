@@ -16,7 +16,6 @@ const masterGel = require('../../assets/img/masterGel.PNG');
 
 const images = [
   wedding1,
-  wedding,
   sharpTop,
   dragontooth,
   cove,
@@ -27,13 +26,16 @@ const images = [
   jo,
 ];
 
-const style = {
-  images: 'width',
+const imageStyle = {
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no - repeat',
+  objectFit: 'cover',
+  width: '50rem',
+  height: '50rem',
 };
 
 const captions = [
   'Me at my wedding!',
-  'Kaitlyn and me!',
   'Love to hike - this is Sharp Top Mountain.',
   `This is from Dragon's tooth!`,
   `Kayaking at Carvin's Cove! I love to be outside when I can.`,
@@ -77,14 +79,12 @@ function Picture() {
         {/* <h1 className="card-header rounded-bottom" style={lightBB}>
           <p style={whiteC}>Get to Know Me</p>
         </h1> */}
-        <div className="">
-          <div className="">
-            <img
-              alt="Shawn Canavan"
-              className="w-100 h-50"
-              src={images[count]}
-            />
-            <figcaption className="text-dark">{captions[count]}</figcaption>
+        <div className={darkBB}>
+          <div className={darkBB}>
+            <img alt="Shawn Canavan" style={imageStyle} src={images[count]} />
+            <div className="bd-primary">
+              <figcaption className="text-dark">{captions[count]}</figcaption>
+            </div>
           </div>
           {/* <button
             className="btn m-1"
