@@ -40,10 +40,10 @@ function NavTabs({ currentPage, handlePageChange }) {
       <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
           href="#Proj3"
-          onClick={() => handlePageChange('Proj3')}
-          style={currentPage === 'Proj3' ? darkBC : whiteC}
-          className={currentPage === 'Proj3' ? 'nav-link active' : 'nav-link'}>
-          Proj3
+          onClick={() => handlePageChange('ЯPlace')}
+          style={currentPage === 'ЯPlace' ? darkBC : whiteC}
+          className={currentPage === 'ЯPlace' ? 'nav-link active' : 'nav-link'}>
+          ЯPlace
         </a>
       </li>
     </ul>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 import { grayB, lightBB, darkBB, whiteC, grayC } from './colors';
@@ -27,6 +27,10 @@ const images = [
   jo,
 ];
 
+const style = {
+  images: 'width',
+};
+
 const captions = [
   'Me at my wedding!',
   'Kaitlyn and me!',
@@ -42,6 +46,7 @@ const captions = [
 
 function Picture() {
   const [count, setCount] = useState(0);
+  const [currentImage, setCurrentImage] = useState(null);
 
   const forwardClick = () => {
     count > 8 ? setCount(0) : setCount(count + 1);
@@ -53,24 +58,35 @@ function Picture() {
     console.log(count);
   };
 
+  useEffect(() => {
+    console.log('useEffect');
+    console.log(count);
+
+    setInterval(() => {
+      setCount((prev) => (prev == images.length - 1 ? 0 : prev + 1));
+    }, 10000);
+
+    clearInterval();
+  }, []);
+
+  console.log(count);
+
   return (
-    <div
-      className="container row justify-content-center text-center mt-3"
-      id="aboutme">
-      <div className="card text-center col-8" style={grayB}>
-        <h1 className="card-header rounded-bottom" style={lightBB}>
+    <div className="flex justify-content-center text-center mt-3" id="aboutme">
+      <div style={whiteC}>
+        {/* <h1 className="card-header rounded-bottom" style={lightBB}>
           <p style={whiteC}>Get to Know Me</p>
-        </h1>
-        <div className="card-body">
-          <div className="container">
+        </h1> */}
+        <div className="">
+          <div className="">
             <img
               alt="Shawn Canavan"
-              className="col-8 rounded"
+              className="w-100 h-50"
               src={images[count]}
             />
-            <figcaption>{captions[count]}</figcaption>
+            <figcaption className="text-dark">{captions[count]}</figcaption>
           </div>
-          <button
+          {/* <button
             className="btn m-1"
             style={darkBB}
             type="button"
@@ -83,7 +99,7 @@ function Picture() {
             type="button"
             onClick={forwardClick}>
             <p style={grayC}>Next</p>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

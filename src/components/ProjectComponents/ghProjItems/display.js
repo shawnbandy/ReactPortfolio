@@ -8,8 +8,9 @@ const classes = {
 const sn = require('../../../assets/img/SwiftNews.png');
 const bb = require('../../../assets/img/bb.png');
 const cms = require('../../../assets/img/CMS.png');
+const rplace = require('../../../assets/img/rplace.png');
 
-const images = [sn, bb, cms];
+const images = [sn, bb, cms, rplace];
 
 function Display({ currentPage }) {
   return (
@@ -100,8 +101,29 @@ function Display({ currentPage }) {
         </h2>
       </div>
       <div
-        className={currentPage === 'Proj3' ? classes.display : classes.hidden}>
-        Coming soon!! A MERN full stack application. It's going to be spicy!
+        className={currentPage === 'ЯPlace' ? classes.display : classes.hidden}>
+        <img
+          alt="social media website Rplace"
+          className="col-12 rounded"
+          src={images[3]}
+        />
+        <p className="mt-3">
+          ЯPlace is a multi-user full stack application inspired by the old
+          social media giant MySpace. It uses React, MongoDB, Mongoose, Material
+          UI, Node, express, Apollo, GraphQL, and JWT. Connect with your
+          friends, share posts, comments, 'graffiti', and customize your profile
+          using embedded HTML elements!
+        </p>
+        <p>
+          My role in this team project was to implement MongoDB, Mongoose, Node,
+          Express, Apollo, GraphQL, and all CRUD API requests.
+        </p>
+        <h2>
+          <a href="https://github.com/shawnbandy/RPlace">Github</a>
+        </h2>
+        <h2>
+          <a href="https://rplace1.herokuapp.com/">Deployed</a>
+        </h2>
       </div>
     </div>
   );
