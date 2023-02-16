@@ -80,9 +80,9 @@ function Main() {
           </h5>
           <div className={classes.cardBody}>
             <p style={darkBC}>
-              My hobbies are: gaming, cycling, learning guitar, hiking,
-              racketball, photography, and of course, coding! I also love to
-              cook, bake, hang out with friends, and try new foods and drinks.
+              My hobbies are: gaming, cycling, guitar, hiking, racketball,
+              snowboarding, and of course, coding! I also love to cook, bake,
+              hang out with friends, and try new foods and drinks.
             </p>
             <p style={darkBC}>
               Some fun facts about me are that I played CS:GO
@@ -106,7 +106,7 @@ function Main() {
             </p>
             <p style={darkBC}>
               If you would like to get into contact with me, please use the
-              'email' button in the footer below!
+              'email' button in the contact tab above!
             </p>
           </div>
         </div>

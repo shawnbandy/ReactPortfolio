@@ -79,11 +79,13 @@ function Picture() {
         {/* <h1 className="card-header rounded-bottom" style={lightBB}>
           <p style={whiteC}>Get to Know Me</p>
         </h1> */}
-        <div className={darkBB}>
-          <div className={darkBB}>
+        <div id="1" className="">
+          <div className="container row justify-content-center">
             <img alt="Shawn Canavan" style={imageStyle} src={images[count]} />
-            <div className="bd-primary">
-              <figcaption className="text-dark">{captions[count]}</figcaption>
+            <div className="d-flex justify-content-center mt-1">
+              <h5 className="card-header rounded w-50" style={lightBB}>
+                {captions[count]}
+              </h5>
             </div>
           </div>
           {/* <button
