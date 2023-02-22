@@ -1,0 +1,6 @@
+.carousel-item {
+    transition: opacity 1s ease-in-out !important;
+  }
+  li{
+  transition: opacity 1s ease !important;
+  }

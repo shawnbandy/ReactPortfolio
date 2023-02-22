@@ -28,7 +28,7 @@ const project = [
       icons.her,
       icons.hb,
     ],
-    issue: '',
+    issue: null,
   },
   {
     picture: picImgs.rplace,
@@ -47,7 +47,7 @@ const project = [
       icons.mdb,
       icons.react,
     ],
-    issue: '',
+    issue: null,
   },
   {
     picture: picImgs.sn,
@@ -67,7 +67,7 @@ const project = [
       icons.ex,
       icons.git,
     ],
-    issue: '',
+    issue: null,
   },
   {
     picture: picImgs.nt,
@@ -95,7 +95,7 @@ const project = [
     gLink: 'https://github.com/shawnbandy/CMS',
     dLink: 'https://www.youtube.com/watch?v=MbHEhctDvc4',
     tech: [icons.mysql, icons.js, icons.ins, icons.node],
-    issue: '',
+    issue: null,
   },
 
   {
@@ -131,13 +131,14 @@ function Projects() {
   let projectCards = [];
 
   project.forEach((object, index) => {
-    projectCards.push(<ProjCards information={object} key={index} />);
+    projectCards.push(<ProjCards information={object} index={index} />);
   });
 
   return (
     <section
       id="projects"
-      className="container row justify-content-center text-center mt-3">
+      className="container row justify-content-center text-center mt-3"
+    >
       <h2>
         <u>Projects</u>
       </h2>

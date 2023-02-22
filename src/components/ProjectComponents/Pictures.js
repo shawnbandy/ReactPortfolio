@@ -92,12 +92,13 @@ function Picture() {
               <div
                 id="carouselExampleControls"
                 class="carousel slide carousel"
-                data-bs-ride="carousel">
+                data-bs-ride="carousel"
+              >
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
                     <img src={wedding1} class="col-6" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h3 style={{ color: 'white' }}>Me at my wedding!</h3>
+                    <div class="d-none d-md-block">
+                      <h3 style={{ color: 'black' }}>Me at my wedding!</h3>
                     </div>
                   </div>
 
@@ -111,7 +112,8 @@ function Picture() {
                               image.text
                                 ? { color: 'white' }
                                 : { color: 'black' }
-                            }>
+                            }
+                          >
                             {image.desc}
                           </h3>
                         </div>
@@ -120,25 +122,8 @@ function Picture() {
                   })}
                 </div>
               </div>
-              {/* <h5 className="card-header rounded w-50" style={lightBB}>
-                {captions[count]}
-              </h5> */}
             </div>
           </div>
-          {/* <button
-            className="btn m-1"
-            style={darkBB}
-            type="button"
-            onClick={backwardClick}>
-            <p style={grayC}>Prev</p>
-          </button>
-          <button
-            className="btn m-1"
-            style={darkBB}
-            type="button"
-            onClick={forwardClick}>
-            <p style={grayC}>Next</p>
-          </button> */}
         </div>
       </div>
     </div>

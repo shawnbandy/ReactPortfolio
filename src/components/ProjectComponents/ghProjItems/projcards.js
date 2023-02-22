@@ -1,14 +1,21 @@
 import React from 'react';
 import IconDisplay from './iconDisplay';
 import Carousel from 'react-bootstrap/Carousel';
+import { useState } from 'react';
 
-function ProjCards({ information }) {
+const classes = {
+  alertHide: 'alert alert-warning alert-dismissible fade show d-none',
+  alertShow:
+    'alert alert-warning alert-dismissible text-center fade show m-0 p-1',
+};
+
+function ProjCards({ information, index }) {
   console.log(information.tech.length);
 
   let iconCarouselGrouping = [];
 
   if (information.tech.length % 3 == 0) {
-    for (let i = 0; i < information.tech.length; i += 3) {
+    for (let i = 3; i < information.tech.length; i += 3) {
       let iconObjGrouping = [
         information.tech[i],
         information.tech[i + 1],
@@ -17,10 +24,9 @@ function ProjCards({ information }) {
       iconCarouselGrouping.push(iconObjGrouping);
     }
   } else {
-    for (let i = 0; i < information.tech.length; i += 3) {
+    for (let i = 3; i < information.tech.length; i += 3) {
       let iconObjGrouping = [];
       if (information.tech[i + 1] == undefined) {
-        console.log('hit1');
         iconObjGrouping.push(
           information.tech[i],
           information.tech[0],
@@ -28,7 +34,6 @@ function ProjCards({ information }) {
         );
         iconCarouselGrouping.push(iconObjGrouping);
       } else if (information.tech[i + 2] == undefined) {
-        console.log('hit2');
         iconObjGrouping.push(
           information.tech[i],
           information.tech[i + 1],
@@ -36,7 +41,6 @@ function ProjCards({ information }) {
         );
         iconCarouselGrouping.push(iconObjGrouping);
       } else {
-        console.log('hit3');
         iconObjGrouping = [
           information.tech[i],
           information.tech[i + 1],
@@ -47,26 +51,38 @@ function ProjCards({ information }) {
     }
   }
 
-  console.log('GROUPING-----------', iconCarouselGrouping);
+  //console.log('GROUPING-----------', iconCarouselGrouping);
+
+  const flipCard = (e) => {
+    console.log(e.target.parentNode.parentNode.parentNode.id);
+  };
+
+  const showIssue = (e) => {
+    console.log(
+      e.target.parentNode.parentNode.parentNode.parentNode.children[3]
+    );
+
+    if (information.issue) {
+      setHidden(!isHidden);
+    }
+  };
+
+  const [isHidden, setHidden] = useState(true);
 
   return (
-    <div class="col-lg-4 col-md-6 col-sm-6 card">
+    <div class="col-lg-4 col-md-6 col-sm-6 card card-rotating" id={index}>
       <img
         src={information.picture}
         class="card-img-top mt-2 rounded w-100 h-100"
         alt="..."
       />
-      <div class="card-body ">
+      {/*START OF THE FLIP CARD, FRONT SIDE */}
+      <div class="card-body face front">
         <h4 class="card-title">
           <b>{information.title}</b>
         </h4>
         <p class="card-text">{information.body}</p>
-        <a href={information.gLink} class="btn btn-primary">
-          Github
-        </a>
-        <a href={information.dLink} class="btn btn-primary">
-          Deployed
-        </a>
+
         <div className="row justify-content-center align-items-center mt-3">
           <h5>
             <u>Technology Used</u>
@@ -74,60 +90,89 @@ function ProjCards({ information }) {
           <div
             id="carouselExampleControls"
             className="carousel slide carousel-fade"
-            data-bs-ride="carousel">
+            data-bs-ride="carousel"
+          >
             <div className="carousel inner">
               <div
                 className="carousel-item active"
                 data-bs-interval="4000"
-                data-bs-wrap="true">
-                <img
-                  src={information.tech[0]}
-                  className="col-3"
-                  width="50rem"
-                  alt="..."
-                />
-                <img
-                  src={information.tech[1]}
-                  className="col-3"
-                  width="50rem"
-                  alt="..."
-                />
-                <img
-                  src={information.tech[2]}
-                  className="col-3"
-                  width="50rem"
-                  alt="..."
-                />
+                data-bs-wrap="true"
+              >
+                <div className="row justify-content-evenly">
+                  <img
+                    src={information.tech[0]}
+                    className="col-3"
+                    width="50rem"
+                    alt="..."
+                  />
+                  <img
+                    src={information.tech[1]}
+                    className="col-3"
+                    width="50rem"
+                    alt="..."
+                  />
+                  <img
+                    src={information.tech[2]}
+                    className="col-3"
+                    width="50rem"
+                    alt="..."
+                  />
+                </div>
               </div>
-
               {iconCarouselGrouping.map((group) => {
-                <div class="carousel-item" data-bs-interval="4000">
-                  <img className="col-3" width="50rem" src={group[0]}></img>
-                  <img className="col-3" width="50rem" src={group[1]}></img>
-                  <img className="col-3" width="50rem" src={group[2]}></img>
-                </div>;
+                return (
+                  <div class="carousel-item" data-bs-interval="4000">
+                    <div className="row justify-content-evenly">
+                      <img className="col-3" width="50rem" src={group[0]}></img>
+                      <img className="col-3" width="50rem" src={group[1]}></img>
+                      <img className="col-3" width="50rem" src={group[2]}></img>
+                    </div>
+                  </div>
+                );
               })}
-              <div class="carousel-item" data-bs-interval="4000">
-                <img
-                  className="col-3"
-                  width="50rem"
-                  src={information.tech[1]}></img>
-                <img
-                  className="col-3"
-                  width="50rem"
-                  src={information.tech[1]}></img>
-                <img
-                  className="col-3"
-                  width="50rem"
-                  src={information.tech[1]}></img>
-              </div>
-              {/* 
-              {iconCarouselGrouping.map((icon, key) => {
-                return <IconDisplay icons={icon} key={key} />;
-              })} */}
             </div>
           </div>
         </div>
+        <div className="row justify-content-evenly mt-3">
+          <a href={information.gLink} class="col-lg-3 btn btn-primary">
+            Github
+          </a>
+          <a href={information.dLink} class="col-lg-3 btn btn-primary">
+            <p
+              onClick={(e) => {
+                showIssue(e);
+              }}
+            >
+              Deployed
+            </p>
+          </a>
+          <a
+            class="col-lg-3 btn btn-primary rotate-btn"
+            onClick={(e) => {
+              flipCard(e);
+            }}
+          >
+            More Info
+          </a>
+        </div>
+      </div>
+      {/*START OF THE FLIP CARD, BACK SIDE */}
+      <div className="face back"></div>
+      <div
+        class={isHidden ? classes.alertHide : classes.alertShow}
+        role="alert"
+      >
+        {information.issue}
+        <br></br>
+        <button
+          type="button"
+          class="btn btn-danger"
+          onClick={() => setHidden(true)}
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span>&times;</span>
+        </button>
       </div>
     </div>
   );
