@@ -3,6 +3,8 @@ import { lightBB, whiteC } from './ProjectComponents/colors';
 import NavBar from './NavBar';
 import Picture from './ProjectComponents/Pictures';
 import Biography from './ProjectComponents/Biography';
+import iconImg from './ProjectComponents/icons';
+import aws from '../../src/assets/icons/aws.png';
 
 import {
   grayB,
@@ -110,6 +112,9 @@ function Main() {
             </p>
           </div>
         </div>
+      </div>
+      <div className={classes.div} style={grayB}>
+        <h5>Proficient in the Following:</h5>
       </div>
     </div>
   );

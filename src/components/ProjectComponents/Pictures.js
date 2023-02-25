@@ -59,8 +59,6 @@ const imTest = [
 ];
 
 const imageStyle = {
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no - repeat',
   objectFit: 'cover',
   width: '50rem',
   height: '50rem',
@@ -92,11 +90,15 @@ function Picture() {
               <div
                 id="carouselExampleControls"
                 class="carousel slide carousel"
-                data-bs-ride="carousel"
-              >
+                data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="1000">
-                    <img src={wedding1} class="col-6" alt="..." />
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img
+                      style={imageStyle}
+                      src={wedding1}
+                      class="col-6"
+                      alt="..."
+                    />
                     <div class="d-none d-md-block">
                       <h3 style={{ color: 'black' }}>Me at my wedding!</h3>
                     </div>
@@ -105,15 +107,17 @@ function Picture() {
                   {imTest.map((image) => {
                     return (
                       <div class="carousel-item" data-bs-interval="10000">
-                        <img src={image.pic} class="col-6"></img>
+                        <img
+                          style={imageStyle}
+                          src={image.pic}
+                          class="col-6"></img>
                         <div class="d-none d-md-block">
                           <h3
                             style={
                               image.text
                                 ? { color: 'white' }
                                 : { color: 'black' }
-                            }
-                          >
+                            }>
                             {image.desc}
                           </h3>
                         </div>

@@ -10,8 +10,6 @@ const classes = {
 };
 
 function ProjCards({ information, index }) {
-  console.log(information.tech.length);
-
   let iconCarouselGrouping = [];
 
   if (information.tech.length % 3 == 0) {
@@ -90,14 +88,12 @@ function ProjCards({ information, index }) {
           <div
             id="carouselExampleControls"
             className="carousel slide carousel-fade"
-            data-bs-ride="carousel"
-          >
+            data-bs-ride="carousel">
             <div className="carousel inner">
               <div
                 className="carousel-item active"
                 data-bs-interval="4000"
-                data-bs-wrap="true"
-              >
+                data-bs-wrap="true">
                 <div className="row justify-content-evenly">
                   <img
                     src={information.tech[0]}
@@ -141,8 +137,7 @@ function ProjCards({ information, index }) {
             <p
               onClick={(e) => {
                 showIssue(e);
-              }}
-            >
+              }}>
               Deployed
             </p>
           </a>
@@ -150,8 +145,7 @@ function ProjCards({ information, index }) {
             class="col-lg-3 btn btn-primary rotate-btn"
             onClick={(e) => {
               flipCard(e);
-            }}
-          >
+            }}>
             More Info
           </a>
         </div>
@@ -160,8 +154,7 @@ function ProjCards({ information, index }) {
       <div className="face back"></div>
       <div
         class={isHidden ? classes.alertHide : classes.alertShow}
-        role="alert"
-      >
+        role="alert">
         {information.issue}
         <br></br>
         <button
@@ -169,8 +162,7 @@ function ProjCards({ information, index }) {
           class="btn btn-danger"
           onClick={() => setHidden(true)}
           data-dismiss="alert"
-          aria-label="Close"
-        >
+          aria-label="Close">
           <span>&times;</span>
         </button>
       </div>
