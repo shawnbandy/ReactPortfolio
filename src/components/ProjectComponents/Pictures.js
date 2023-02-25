@@ -95,7 +95,7 @@ function Picture() {
                 data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
+                  <div class="carousel-item active" data-bs-interval="1000">
                     <img src={wedding1} class="col-6" alt="..." />
                     <div class="d-none d-md-block">
                       <h3 style={{ color: 'black' }}>Me at my wedding!</h3>
