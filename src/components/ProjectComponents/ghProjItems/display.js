@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { lazy, useEffect } from 'react';
+const fightGame = import('../../GameComponents/fight');
 
 const classes = {
   display: 'd-block',
@@ -13,40 +14,41 @@ const rplace = require('../../../assets/img/rplace.png');
 const images = [sn, bb, cms, rplace];
 
 function Display({ currentPage }) {
+  useEffect(() => {});
+
   return (
     <div>
       <div
         className={
-          currentPage === 'SwiftNews' ? classes.display : classes.hidden
-        }>
-        <img
-          alt="news application"
-          className="col-12 rounded"
-          src={images[0]}
-        />
+          currentPage === 'FightingGame' ? classes.display : classes.hidden
+        }
+      >
+        <canvas id="canvas" style={{ backgroundColor: 'red' }}></canvas>
         <p className="mt-3">
-          Swift News is a easy to access news website that uses multiple APIs
-          from the New York Times to display the most popular news, the top
-          stories of today, and other news articles. The articles are presented
-          as an easy-to-read format, with their image, abstract, and title
-          displayed per article.
+          This is a personal project I began when I was on a flight to San
+          Diego! You can move with keys AD, jump with W, and attack with X.
         </p>
         <p>
-          My role in this team project was the project manager, coding the main
-          article page, setting up the API calls, and adding functionality to
-          the NavBar and other buttons
+          Currently working on bug fixing the collision between characters. If
+          you get stuck on the second player, you can jump out of it.
         </p>
-        <h2>
-          <a href="https://github.com/shawnbandy/SwiftNews">Github</a>
-        </h2>
-        <h2>
-          <a href="https://shawnbandy.github.io/SwiftNews/">Deployed</a>
-        </h2>
+        <div className="row">
+          <div className="col-lg-6 col-sm-12 col-md-6">
+            <h3>On the Stack TODOs</h3>
+            <ul className="list-group-flush">
+              <li className="list-group-item">Fix Collision</li>
+              <li className="list-group-item">Fix Collision</li>
+              <li className="list-group-item">Fix Collision</li>
+              <li className="list-group-item">Fix Collision</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div
         className={
           currentPage === 'BudgetBuddy' ? classes.display : classes.hidden
-        }>
+        }
+      >
         <img
           alt="BudBud financial application"
           className="col-12 rounded"
@@ -101,7 +103,8 @@ function Display({ currentPage }) {
         </h2>
       </div>
       <div
-        className={currentPage === 'ЯPlace' ? classes.display : classes.hidden}>
+        className={currentPage === 'ЯPlace' ? classes.display : classes.hidden}
+      >
         <img
           alt="social media website Rplace"
           className="col-12 rounded"

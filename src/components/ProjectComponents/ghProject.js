@@ -145,11 +145,15 @@ function Projects() {
       <div className="container row justify-content-center text-center">
         {projectCards}
       </div>
+      <h2 className="mt-3">
+        <u>Ongoing</u>
+      </h2>
       <div className="card" style={grayB}>
         <NavTabs
           currentPage={currentPage}
           handlePageChange={handlePageChange}
         />
+
         <div className="card-body">
           <Display
             currentPage={currentPage}

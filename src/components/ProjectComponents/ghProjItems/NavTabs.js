@@ -6,13 +6,14 @@ function NavTabs({ currentPage, handlePageChange }) {
     <ul className="nav nav-tabs rounded" style={lightBB}>
       <li className="nav-item col-lg-3 col-md-6 col-sm-12">
         <a
-          href="#SwiftNews"
-          style={currentPage === 'SwiftNews' ? darkBC : whiteC}
-          onClick={() => handlePageChange('SwiftNews')}
+          href="#FightingGame"
+          style={currentPage === 'FightingGame' ? darkBC : whiteC}
+          onClick={() => handlePageChange('FightingGame')}
           className={
-            currentPage === 'SwiftNews' ? 'nav-link active' : 'nav-link'
-          }>
-          SwiftNews
+            currentPage === 'FightingGame' ? 'nav-link active' : 'nav-link'
+          }
+        >
+          HTML Fighting Game
         </a>
       </li>
       <li className="nav-item col-lg-3 col-md-6 col-sm-12">
@@ -24,7 +25,8 @@ function NavTabs({ currentPage, handlePageChange }) {
             currentPage === 'BudgetBuddy'
               ? 'nav-link active col-sm-12'
               : 'nav-link'
-          }>
+          }
+        >
           BudgetBuddy
         </a>
       </li>
@@ -33,7 +35,8 @@ function NavTabs({ currentPage, handlePageChange }) {
           href="#CMS"
           onClick={() => handlePageChange('CMS')}
           style={currentPage === 'CMS' ? darkBC : whiteC}
-          className={currentPage === 'CMS' ? 'nav-link active' : 'nav-link'}>
+          className={currentPage === 'CMS' ? 'nav-link active' : 'nav-link'}
+        >
           CMS
         </a>
       </li>
@@ -42,7 +45,8 @@ function NavTabs({ currentPage, handlePageChange }) {
           href="#Proj3"
           onClick={() => handlePageChange('ЯPlace')}
           style={currentPage === 'ЯPlace' ? darkBC : whiteC}
-          className={currentPage === 'ЯPlace' ? 'nav-link active' : 'nav-link'}>
+          className={currentPage === 'ЯPlace' ? 'nav-link active' : 'nav-link'}
+        >
           ЯPlace
         </a>
       </li>
