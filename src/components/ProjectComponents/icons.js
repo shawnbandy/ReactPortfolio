@@ -14,7 +14,7 @@ import node from '../../assets/icons/node.png';
 import python from '../../assets/icons/python.png';
 import react from '../../assets/icons/react.png';
 import seq from '../../assets/icons/seq.png';
-import tw from '../../assets/icons/tw.jpg';
+import tw from '../../assets/icons/tw.png';
 import word from '../../assets/icons/word.png';
 import css from '../../assets/icons/css.png';
 import json from '../../assets/icons/json.png';

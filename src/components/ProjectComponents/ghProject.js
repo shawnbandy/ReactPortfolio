@@ -19,6 +19,7 @@ const project = [
       icons.css,
       icons.tw,
       icons.ex,
+      icons.node,
       icons.mysql,
       icons.seq,
       icons.json,
@@ -29,6 +30,8 @@ const project = [
       icons.hb,
     ],
     issue: null,
+    moreInfo:
+      'My role in this team project was that I was the project manager, and I set up the MVC routing to render the handlebar pages, I coded parts of the handlebar pages, I added scripting to the website for CRUD API calls, and set up the API calls. This application uses HTML, CSS, Tailwind, Express.js, Node.js, MySQL, Sequelize, JSON, JavaScript, Insomnia, Git, Heroku, and Handlebars.',
   },
   {
     picture: picImgs.rplace,
@@ -48,6 +51,8 @@ const project = [
       icons.react,
     ],
     issue: null,
+    moreInfo:
+      'My role in this team project was to be the back end specialist, so I set up MongoDB, Mongoose, Node, Express, Apollo, GraphQL, and all CRUD API requests. I also took initiative and worked on some front end elements to help my team out. This application uses Express.js, Git, Heroku, Insomnia, JSON, Javascript, MongoDB, React.js, Mongoose, and MaterialUI.',
   },
   {
     picture: picImgs.sn,
@@ -68,6 +73,8 @@ const project = [
       icons.git,
     ],
     issue: null,
+    moreInfo:
+      'My role in this team project was the project manager, I coded and framed the main article page using HTML and Tailwind, set up the API calls to the NYT, and added scripting for the Navigation bar. This application uses HTML, CSS, Tailwind, Insomnia, JQuery, JavaScript, Node.js, JSON, Express.js, and Git.',
   },
   {
     picture: picImgs.nt,
@@ -87,6 +94,8 @@ const project = [
     ],
     issue:
       'Unfortunately, Heroku has stopped their free plan, so this application is not currently deployed.',
+    moreInfo:
+      'NoteTaker uses Express.js to handle CRUD requests to db.json for a simple and local database environment.',
   },
   {
     picture: picImgs.cms,
@@ -96,6 +105,8 @@ const project = [
     dLink: 'https://www.youtube.com/watch?v=MbHEhctDvc4',
     tech: [icons.mysql, icons.js, icons.ins, icons.node],
     issue: null,
+    moreInfo:
+      'This was a solo project to outline database structures for future planning and success. I used MySQL, Node.js, JavaScript, Inquirer, and Insomnia to make a complex database application.',
   },
 
   {
@@ -120,6 +131,8 @@ const project = [
     ],
     issue:
       'Unfortunately, Heroku has stopped their free plan, so this application is not currently deployed.',
+    moreInfo:
+      'This application was a solo project that used a wide variety of MVC tools to make a multi-user application. The tools used were MySQL, Express.js, Handlebars, Sequelize, Dotenv, Bcrypt, Express-Session, Session-Sequelize, JavaScript, HTML, Bootstrap, and Handlebars.',
   },
 ];
 
@@ -137,8 +150,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="container row justify-content-center text-center mt-3"
-    >
+      className="container row justify-content-center text-center mt-3">
       <h2>
         <u>Projects</u>
       </h2>

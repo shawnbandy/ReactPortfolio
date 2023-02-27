@@ -7,6 +7,8 @@ const classes = {
   alertHide: 'alert alert-warning alert-dismissible fade show d-none',
   alertShow:
     'alert alert-warning alert-dismissible text-center fade show m-0 p-1',
+  frontSide: 'card-body',
+  backSide: 'card-body d-none',
 };
 
 function ProjCards({ information, index }) {
@@ -53,6 +55,7 @@ function ProjCards({ information, index }) {
 
   const flipCard = (e) => {
     console.log(e.target.parentNode.parentNode.parentNode.id);
+    setFrontSide(!frontSide);
   };
 
   const showIssue = (e) => {
@@ -66,6 +69,7 @@ function ProjCards({ information, index }) {
   };
 
   const [isHidden, setHidden] = useState(true);
+  const [frontSide, setFrontSide] = useState(true);
 
   return (
     <div class="col-lg-4 col-md-6 col-sm-6 card card-rotating" id={index}>
@@ -75,7 +79,7 @@ function ProjCards({ information, index }) {
         alt="..."
       />
       {/*START OF THE FLIP CARD, FRONT SIDE */}
-      <div class="card-body face front">
+      <div className={frontSide ? classes.frontSide : classes.backSide}>
         <h4 class="card-title">
           <b>{information.title}</b>
         </h4>
@@ -138,7 +142,7 @@ function ProjCards({ information, index }) {
               onClick={(e) => {
                 showIssue(e);
               }}>
-              Deployed
+              Deploy
             </p>
           </a>
           <a
@@ -151,7 +155,18 @@ function ProjCards({ information, index }) {
         </div>
       </div>
       {/*START OF THE FLIP CARD, BACK SIDE */}
-      <div className="face back"></div>
+      <div className={!frontSide ? classes.frontSide : classes.backSide}>
+        <p>{information.moreInfo}</p>
+        <div>
+          <a
+            class="col-lg-3 btn btn-primary rotate-btn"
+            onClick={(e) => {
+              flipCard(e);
+            }}>
+            Overview
+          </a>
+        </div>
+      </div>
       <div
         class={isHidden ? classes.alertHide : classes.alertShow}
         role="alert">
@@ -189,4 +204,60 @@ export default ProjCards;
           </div>
         </div>
       </div>
+*/
+
+/* 
+<div class="card-wrapper">
+  <div id="card-1" class="card card-rotating text-center">
+
+    <!-- Front Side -->
+    <div class="face front">
+
+      <!-- Image-->
+      <div class="card-up">
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo7.webp" alt="Image with a photo of clouds.">
+      </div>
+
+      <!-- Avatar -->
+      <div class="avatar mx-auto white"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).webp" class="rounded-circle"
+          alt="Sample avatar image.">
+      </div>
+
+      <!-- Content -->
+      <div class="card-body">
+        <h4 class="font-weight-bold mb-3">Marie Johnson</h4>
+        <p class="font-weight-bold blue-text">Web developer</p>
+        <!-- Triggering button -->
+        <a class="rotate-btn" data-card="card-1"><i class="fas fa-redo-alt"></i> Click here to rotate</a>
+      </div>
+    </div>
+    <!-- Front Side -->
+
+    <!-- Back Side -->
+    <div class="face back">
+      <div class="card-body">
+
+        <!-- Content -->
+        <h4 class="font-weight-bold mb-0">About me</h4>
+        <hr>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel
+          eius veniam maxime?
+          <hr>
+          <!-- Social Icons -->
+          <ul class="list-inline py-2">
+            <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+          <!-- Triggering button -->
+          <a class="rotate-btn" data-card="card-1"><i class="fas fa-undo"></i> Click here to rotate back</a>
+
+      </div>
+    </div>
+    <!-- Back Side -->
+
+  </div>
+</div>
 */

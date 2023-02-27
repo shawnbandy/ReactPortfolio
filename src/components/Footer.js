@@ -10,27 +10,35 @@ const classes = {
 function Footer() {
   return (
     <footer className={classes.footer} style={lightBB}>
-      <div class="row col-6">
-        <div class="col">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6">
           <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="mailto:canavan.shawn@gmail.com">
+            <a style={whiteC} href="mailto:shawncanavanjobs@gmail.com">
               <h4>📧</h4>
             </a>
           </button>
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-3 col-sm-6">
           <button className={classes.button} style={lightBB}>
             <a
               style={whiteC}
-              href="https://www.facebook.com/shawn.canavan"
+              href="https://www.github.com/shawnbandy"
               target="_blank"
               rel="noreferrer">
-              <h4>🙂📘</h4>
+              <h4>GitHub</h4>
             </a>
           </button>
         </div>
-        <div class="w-100"></div>
-        <div class="col">
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div class="col">
+            <button className={classes.button} style={lightBB}>
+              <a style={whiteC} href="#header">
+                <h4>Header</h4>
+              </a>
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
           <button className={classes.button} style={lightBB}>
             <a
               style={whiteC}
@@ -38,60 +46,6 @@ function Footer() {
               target="_blank"
               rel="noreferrer">
               <h4>🔗</h4>
-            </a>
-          </button>
-        </div>
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#">
-              <h4>©</h4>
-            </a>
-          </button>
-        </div>
-      </div>
-      <div class="row col-6">
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#header">
-              <h4>Header</h4>
-            </a>
-          </button>
-        </div>
-        <div class="col">
-          {' '}
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#aboutme">
-              <h4>About Me</h4>
-            </a>
-          </button>
-        </div>
-        <div class="w-100"></div>
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#biography">
-              <h4>Biography</h4>
-            </a>
-          </button>
-        </div>
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#projects">
-              <h4>Projects</h4>
-            </a>
-          </button>
-        </div>
-        <div class="w-100"></div>
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#code">
-              <h4>Example Code</h4>
-            </a>
-          </button>
-        </div>
-        <div class="col">
-          <button className={classes.button} style={lightBB}>
-            <a style={whiteC} href="#game">
-              <h4>Game</h4>
             </a>
           </button>
         </div>

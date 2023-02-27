@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { lightBB, whiteC } from './ProjectComponents/colors';
+import { lightBB, whiteB, whiteC } from './ProjectComponents/colors';
 import NavBar from './NavBar';
 import Picture from './ProjectComponents/Pictures';
 import Biography from './ProjectComponents/Biography';
@@ -22,9 +22,12 @@ const classes = {
   description: 'container row col-md-8 cold-sm-12 col-lg-8 w-100 mb-3',
   cardBody: 'card-body row align-items-center justify-content-center',
   div: 'card col-lg-6 col-sm-12 col-md-12 p-1 border border-white',
+  img: 'col-2 mx-2',
 };
 
 function Main() {
+  let iconArray = [];
+
   return (
     <div className={classes.container}>
       <h2>
@@ -63,16 +66,17 @@ function Main() {
             <p style={darkBC}>
               I currently work at Bramson Productions as a Webcaster, where I
               work with a diverse international team delivering professional
-              broadcasts for clients to wide audiences.
+              broadcasts for clients to wide audiences. I also help design,
+              create, and maintain landing pages for clients.
             </p>
             <p style={darkBC}>
               Previously, I worked in Biomedical Engineering at Georgia Tech
-              researching neurotrama on an animal model. I provided research,
+              researching neurotrauma on an animal model. I provided research,
               support, analyses, performed experiments, as well as project
               managed the lab and its members for success.
             </p>
             <p style={darkBC}>
-              Download my full resume in the contact tab above!
+              Download my full resume in the Contact tab above!
             </p>
           </div>
         </div>
@@ -113,8 +117,32 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className={classes.div} style={grayB}>
-        <h5>Proficient in the Following:</h5>
+      <div className={classes.div} style={whiteB}>
+        <h2>Proficient in the Following:</h2>
+        <div className="">
+          <img className={classes.img} src={iconImg.aws}></img>
+          <img className={classes.img} src={iconImg.bs}></img>
+          <img className={classes.img} src={iconImg.cs}></img>
+          <img className={classes.img} src={iconImg.css}></img>
+          <img className={classes.img} src={iconImg.ex}></img>
+          <img className={classes.img} src={iconImg.git}></img>
+          <img className={classes.img} src={iconImg.hb}></img>
+          <img className={classes.img} src={iconImg.her}></img>
+          <img className={classes.img} src={iconImg.html}></img>
+          <img className={classes.img} src={iconImg.ins}></img>
+          <img className={classes.img} src={iconImg.java}></img>
+          <img className={classes.img} src={iconImg.jq}></img>
+          <img className={classes.img} src={iconImg.js}></img>
+          <img className={classes.img} src={iconImg.json}></img>
+          <img className={classes.img} src={iconImg.mdb}></img>
+          <img className={classes.img} src={iconImg.mysql}></img>
+          <img className={classes.img} src={iconImg.node}></img>
+          <img className={classes.img} src={iconImg.python}></img>
+          <img className={classes.img} src={iconImg.react}></img>
+          <img className={classes.img} src={iconImg.seq}></img>
+          <img className={classes.img} src={iconImg.tw}></img>
+          <img className={classes.img} src={iconImg.word}></img>
+        </div>
       </div>
     </div>
   );

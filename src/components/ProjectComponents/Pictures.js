@@ -89,10 +89,10 @@ function Picture() {
             <div className="mt-1">
               <div
                 id="carouselExampleControls"
-                class="carousel slide carousel"
+                class="carousel slide carousel-fade"
                 data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
+                  <div class="carousel-item active" data-bs-interval="5000">
                     <img
                       style={imageStyle}
                       src={wedding1}
@@ -106,7 +106,7 @@ function Picture() {
 
                   {imTest.map((image) => {
                     return (
-                      <div class="carousel-item" data-bs-interval="10000">
+                      <div class="carousel-item" data-bs-interval="5000">
                         <img
                           style={imageStyle}
                           src={image.pic}

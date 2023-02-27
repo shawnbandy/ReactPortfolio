@@ -241,8 +241,8 @@ function updateGameStatus() {
   if (keyPressed.x.pressed) {
     char1.attack();
   }
-  p1hp.textContent = `P1 ${char1.hp}`;
-  p2hp.textContent = `P2 ${char2.hp}`;
+  // p1hp.textContent = `P1 ${char1.hp}`;
+  // p2hp.textContent = `P2 ${char2.hp}`;
 }
 
 updateGameStatus();

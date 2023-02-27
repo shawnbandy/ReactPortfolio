@@ -21,15 +21,17 @@ function Display({ currentPage }) {
           currentPage === 'FightingGame' ? classes.display : classes.hidden
         }>
         <canvas id="canvas" style={{ backgroundColor: 'black' }}></canvas>
-        <p className="mt-3">
+        <h2 className="mt-3">
           This is a personal project I began when I was on a flight to San
-          Diego! You can move with keys AD, jump with W, and attack with X. Some
-          challenges I faced were establishing gravity, preventing players from
-          moving outside the canvas, and collision detection.
-        </p>
+          Diego!
+        </h2>
         <p>
-          Currently working on bug fixing the collision between characters. If
-          you get stuck on the second player, you can jump out of it.
+          You can move with keys AD, jump with W, and attack with X. Some
+          challenges I faced were establishing gravity, preventing players from
+          moving outside the canvas, and collision detection.{' '}
+          <i>This demo will NOT work on mobile browsing</i>. Currently working
+          on bug fixing the collision between characters. If you get stuck on
+          the second player, you can jump out of it.
         </p>
         <div className="row">
           <div className="col-lg-6 col-sm-12 col-md-6">
@@ -86,14 +88,45 @@ function Display({ currentPage }) {
           className="col-12 rounded"
           src={images[1]}
         />
-        <p className="mt-3">
+        <h2 className="mt-3">
           Continuing to work on this project by rebuilding it in the MERN stack.
-        </p>
+        </h2>
         <p>
           Currently setting up the MongoDB API calls and using Apollo/GraphQL
           for API testing.
         </p>
-        <h2></h2>
+        <div className="row">
+          <div className="col-lg-6 col-sm-12 col-md-6">
+            <h3>On the Stack TODOs</h3>
+            <ul className="list-group text-center">
+              <li className="list-group-item">
+                Finish CRUD calls with MongoDB.
+              </li>
+              <li className="list-group-item">Remake components in React.</li>
+              <li className="list-group-item">Finish scripting.</li>
+            </ul>
+          </div>
+          <div className="col-lg-6 col-sm-12 col-md-6">
+            <h3>Planned Feature TODOs</h3>
+            <ul className="list-group text-center">
+              <li className="list-group-item">
+                Make a viewing page with a pie chart for visual reference of how
+                a user is spending/budgeting.
+              </li>
+              <li className="list-group-item">
+                Make a 'view all' page to see all the expenses related to a
+                budget.
+              </li>
+              <li className="list-group-item">
+                Allow user to download monthly budget to an excel sheet.
+              </li>
+              <li className="list-group-item">
+                Allow user to have multiple months of data stored so they can
+                reference it.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div
         className={
@@ -104,13 +137,33 @@ function Display({ currentPage }) {
           className="col-12 rounded"
           src={images[2]}
         /> */}
-        <p className="mt-3">Building a new landing page for my company!</p>
+        <h2 className="mt-3">Building a new landing page for my company!</h2>
         <p>
           Currently in the planning stages, so I'm researching other webpages
           and competitors to find the industry standard, talking with the
           President of our creative department, and meeting with graphic
           designers to collaborate with ideas to make our site stand out.
         </p>
+        <div className="row">
+          <div className="col-lg-6 col-sm-12 col-md-6">
+            <h3>On the Stack TODOs</h3>
+            <ul className="list-group text-center">
+              <li className="list-group-item">
+                Plan the overall content of the website.
+              </li>
+              <li className="list-group-item">
+                Create a wireframe for organization.
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-6 col-sm-12 col-md-6">
+            <h3>Planned Feature TODOs</h3>
+            <ul className="list-group text-center">
+              <li className="list-group-item">Add content, CSS, SaSS.</li>
+              <li className="list-group-item">Deploy</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
